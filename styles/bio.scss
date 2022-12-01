@@ -60,6 +60,13 @@
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
+    min-height: 72vh;
+    font-size: 2.4rem;
+    font-weight: 700;
+    align-items: center;
+    display: flex;
+
+
     @include bg-img;
 
 
@@ -99,4 +106,21 @@
         font-weight: 400;
         line-height: 1.8rem;
      }
+}
+.gallery{
+    background-color: $alabaster-color;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    
+    &__title{
+        padding: 1rem 1.6rem;
+        
+        margin: 0;
+    }
+
+    &__list{
+        width: 100%;
+        margin-top: 1.6rem;
+    }
 }
