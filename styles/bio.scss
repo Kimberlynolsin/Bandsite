@@ -8,8 +8,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    
+    padding: 1rem 0 0 0;
+
 
     &__logo {
         height: 2rem;
@@ -17,10 +17,10 @@
         margin-top: 1.6rem;
 
     }
-    
-    &__nav{
+
+    &__nav {
         width: 100%;
-    
+
     }
 
     .header__link {
@@ -46,10 +46,14 @@
         text-decoration: none;
         color: $white-color;
         list-style-type: none;
-        margin: 1rem;
+        margin: 0;
         font-weight: 600;
+        padding-bottom: 1rem;
     }
-
+    
+    .nav--bio{
+    border-bottom: 0.1rem solid $white-color;
+    }
     &__item {
         margin: 0;
     }
@@ -60,11 +64,13 @@
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
-    min-height: 72vh;
+    min-height: 53vh;
     font-size: 2.4rem;
     font-weight: 700;
     align-items: center;
     display: flex;
+    opacity: 80%;
+    
 
 
     @include bg-img;
@@ -74,53 +80,116 @@
         color: $white-color;
         justify-content: center;
         margin-left: 1.6rem;
+        opacity: initial;
     }
 }
-.article{
+
+.article {
     display: flex;
     flex-direction: column;
     margin: 1.6rem;
 
-     
-    &__img{
+
+    &__img {
         width: 100%;
-        
-        
-     }
-     &__quote{
+
+
+    }
+
+    &__quote {
         color: $black-color;
         font-size: 1.4rem;
         font-weight: 600;
         width: 100%;
-        // line-height: 2.2rem;
-        
-     }
-     &__subtitle{
-        font-size: 1.4rem;
-        font-weight: 600; 
-        color: $darkblack-color;
-     }
 
-     &__details{
+    }
+
+    &__subtitle {
         font-size: 1.4rem;
+        font-weight: 600;
+        color: $darkblack-color;
+    }
+
+    &__details {
+        font-size: 1.3rem;
         font-weight: 400;
         line-height: 1.8rem;
-     }
+    }
 }
-.gallery{
+
+.gallery {
     background-color: $alabaster-color;
     display: flex;
     flex-direction: column;
     padding: 1.6rem;
-    
-    &__title{
+
+    &__title {
         padding: 1rem 1.6rem;
-        
+
         margin: 0;
     }
 
-    &__list{
+    &__list {
         width: 100%;
         margin-top: 1.6rem;
     }
+}
+
+.footer {
+    background-color: $black-color;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    
+    &__subtitle{
+        font-size: 2.4rem;
+        font-weight: 700;
+
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+    }
+    &__icons{
+        width: 3rem;
+    }
+
+    &--facebook{
+        width: 1.5rem;
+    }
+    &--twitter{
+        width: 3.5rem;
+    }
+    &__details{
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+    }
+    &__names{
+        font-weight: 600;
+    }
+    &__logo{
+        width: 12rem;
+        margin-top: 4rem;
+    }
+    &__copyright{
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+}
+
+.test{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header__left, .header__right{
+    text-decoration: none;
+    color: $white-color;
+    // display: flex;
+}
+.header__left{
+    border-bottom: 0.5rem solid white;
 }
