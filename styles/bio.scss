@@ -8,15 +8,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
+    
 
     &__logo {
         height: 2rem;
         width: 12rem;
-        margin-bottom: 2rem;
-
-        // display: flex;
-
+        margin-top: 1.6rem;
 
     }
     
@@ -38,7 +36,7 @@
     .nav__list {
         display: flex;
         width: 100%;
-        justify-content: space-evenly;
+        justify-content: space-around;
         margin: 0;
         font-size: 1.4rem;
         padding: 0;
@@ -68,5 +66,37 @@
     &__title {
         color: $white-color;
         justify-content: center;
+        margin-left: 1.6rem;
     }
+}
+.article{
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem;
+
+     
+    &__img{
+        width: 100%;
+        
+        
+     }
+     &__quote{
+        color: $black-color;
+        font-size: 1.4rem;
+        font-weight: 600;
+        width: 100%;
+        // line-height: 2.2rem;
+        
+     }
+     &__subtitle{
+        font-size: 1.4rem;
+        font-weight: 600; 
+        color: $darkblack-color;
+     }
+
+     &__details{
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+     }
 }
