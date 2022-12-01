@@ -1,3 +1,32 @@
+@use './partials/resets' as *;
 @use './partials/typography' as *;
 @use './partials/variables' as *;
-@use './partials/mixin' as *;
+@use './partials/mixins' as *;
+
+.header{
+    background-color: $black-color;
+    
+   
+    .header__link{
+        text-decoration: none;
+        color: $white-color;
+    }
+    &__title{
+        text-align: center;
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .nav__link{
+        text-decoration: none;
+        color: $white-color;
+        list-style-type: none;
+        margin-right: 1.6rem;
+    }
+    
+
+}
