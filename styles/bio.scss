@@ -3,30 +3,70 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-.header{
+.header {
     background-color: $black-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    &__logo {
+        height: 2rem;
+        width: 12rem;
+        margin-bottom: 2rem;
+
+        // display: flex;
+
+
+    }
     
-   
-    .header__link{
+    &__nav{
+        width: 100%;
+    
+    }
+
+    .header__link {
         text-decoration: none;
         color: $white-color;
     }
-    &__title{
+
+    &__title {
         text-align: center;
+        margin: 0;
     }
 
     .nav__list {
         display: flex;
-        justify-content: center;
+        width: 100%;
+        justify-content: space-evenly;
         margin: 0;
+        font-size: 1.4rem;
+        padding: 0;
     }
-    
-    .nav__link{
+
+    .nav__link {
         text-decoration: none;
         color: $white-color;
         list-style-type: none;
-        margin-right: 1.6rem;
+        margin: 1rem;
+        font-weight: 600;
     }
-    
 
+    &__item {
+        margin: 0;
+    }
+
+
+
+}
+
+.hero {
+    background-image: url(../assets/Images/hero-bio.jpg);
+    @include bg-img;
+
+
+    &__title {
+        color: $white-color;
+        justify-content: center;
+    }
 }
