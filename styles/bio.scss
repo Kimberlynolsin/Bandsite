@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
-    
+
 
     @include tablet {
         flex-direction: row;
@@ -20,7 +20,7 @@
     &__logo {
         height: 2rem;
         width: 12rem;
-        
+
 
         @include tablet {
             margin: 2rem 3rem 2rem 3rem;
@@ -48,7 +48,7 @@
         font-size: 1.4rem;
         padding: 1rem;
 
-        @include tablet{
+        @include tablet {
             justify-content: flex-start;
             font-size: 2rem;
         }
@@ -59,24 +59,25 @@
             list-style-type: none;
             margin: 0;
             font-weight: 400;
-            
-            @include tablet{
+
+            @include tablet {
                 margin: 2rem;
-        
+
             }
+
             &__items {
                 width: 100%;
-                
-                
+
+
             }
         }
     }
-    
-    
-        
+
+
+
 }
 
-    
+
 
 
 
@@ -92,7 +93,7 @@
 
     @include bg-img;
 
-    @include tablet{
+    @include tablet {
         min-height: 74vh;
 
     }
@@ -104,9 +105,9 @@
         margin-left: 1.6rem;
         opacity: initial;
 
-        @include tablet{
+        @include tablet {
             font-size: 6rem;
-            
+
         }
     }
 }
@@ -116,30 +117,31 @@
     flex-direction: column;
     margin: 1.6rem;
 
-    @include tablet{
+    @include tablet {
         margin: 0 6rem 0 6rem;
         align-items: center;
-    
-        
-        &__title-container{
+
+
+        &__title-container {
             width: 100%;
             margin-top: 4rem;
-            
+
         }
     }
-       
-        @include tablet{
-            &__title{
-                font-size: 3.6rem;
-                
-            }
-        }
 
-    
+    @include tablet {
+        &__title {
+            font-size: 3.6rem;
+
+        }
+    }
+
+
 
     &__img {
         width: 100%;
-        @include tablet{
+
+        @include tablet {
             width: 90%;
         }
 
@@ -151,12 +153,12 @@
         font-weight: 700;
         width: 100%;
 
-        @include tablet{
+        @include tablet {
             font-size: 2.4rem;
             line-height: 3.2rem;
             padding: 0 4rem;
 
-            &-author{
+            &-author {
                 font-weight: 600;
                 font-size: 1.7rem;
                 padding-top: 1.5rem;
@@ -165,7 +167,7 @@
 
     }
 
-    &__subtitle-container{
+    &__subtitle-container {
         width: 100%;
     }
 
@@ -174,18 +176,18 @@
         font-weight: 600;
         color: $darkblack-color;
 
-        @include tablet{
+        @include tablet {
             font-size: 2.4rem;
             margin-bottom: 0;
         }
     }
 
-    &__container{
-        @include tablet{
+    &__container {
+        @include tablet {
             display: flex;
             padding-bottom: 4rem;
             width: 92%;
-            
+
         }
     }
 
@@ -194,7 +196,7 @@
         font-weight: 400;
         line-height: 1.8rem;
 
-        @include tablet{
+        @include tablet {
             font-size: 1.4rem;
             line-height: 2.2rem;
             padding: 1rem;
@@ -214,72 +216,78 @@
 
         margin: 0;
     }
-    &__images{
-        @include tablet{
+
+    &__images {
+        @include tablet {
             display: flex;
-            flex-direction:row;
+            flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            
+
         }
     }
+
     &__list {
         width: 100%;
         margin-top: 1.6rem;
 
-        @include tablet{
+        @include tablet {
             width: 30%;
-            margin:1rem;
+            margin: 1rem;
         }
 
-        
+
     }
 }
 
 .footer {
     background-color: $black-color;
     color: $white-color;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     padding: 1.6rem;
 
-    &__container{
-        @include tablet{
+    &__container {
+        @include tablet {
             margin: 0 2rem;
-        
+
         }
     }
-    &__container-icons{
+
+    &__container-icons {
         @include tablet {
             display: flex;
-            // flex-direction: row;
-            align-items: center;
+            align-items: baseline;
         }
     }
 
     &__subtitle {
         font-size: 2.4rem;
         font-weight: 700;
-            @include tablet{
-                font-size: 3.6rem;
-                margin-right: 4rem;
-            }
+        margin-bottom: 2rem;
+
+        @include tablet {
+            font-size: 3.6rem;
+            margin-right: 4rem;
+        }
     }
 
     &__socials {
         display: flex;
         justify-content: space-between;
         width: 20%;
+        margin-bottom: 2rem;
 
-        @include tablet{
+        @include tablet {
             width: 0;
+            align-items: baseline;
         }
     }
 
     &__icons {
         width: 3rem;
 
-        @include tablet{
+        @include tablet {
             margin-right: 4rem;
         }
     }
@@ -297,20 +305,50 @@
         font-weight: 400;
         line-height: 1.8rem;
 
-        @include tablet{
+        @include tablet {
             display: flex;
             justify-content: space-between;
             font-size: 1.4rem;
+            align-items: baseline;
+
+
         }
     }
 
     &__names {
         font-weight: 600;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__address {
+        margin-bottom: 2rem;
+
+        @include tablet {
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+    &__emails {
+        margin-bottom: 2rem;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 
     &__logo {
         width: 12rem;
         margin-top: 4rem;
+
+        @include tablet {
+           
+        }
     }
 
     &__copyright {
@@ -324,11 +362,9 @@
 .header__right {
     text-decoration: none;
     color: $white-color;
-    
+
 }
 
 .header__left {
     border-bottom: 0.5rem solid white;
 }
-
-
