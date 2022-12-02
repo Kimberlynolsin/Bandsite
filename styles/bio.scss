@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
+    
 
 
     @include tablet {
@@ -20,7 +20,7 @@
     &__logo {
         height: 2rem;
         width: 12rem;
-
+        margin: 3rem 0 2rem 0;
 
         @include tablet {
             margin: 2rem 3rem 2rem 3rem;
@@ -46,32 +46,39 @@
         justify-content: space-around;
         margin: 0;
         font-size: 1.4rem;
-        padding: 1rem;
+        padding: 0;
+        
 
         @include tablet {
             justify-content: flex-start;
             font-size: 2rem;
         }
 
-        .nav__link {
-            text-decoration: none;
-            color: $white-color;
-            list-style-type: none;
-            margin: 0;
-            font-weight: 400;
+     }
+    
+     .nav__link {
+        text-decoration: none;
+        color: $white-color;
+        list-style-type: none;
+        margin: 0;
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
 
-            @include tablet {
-                margin: 2rem;
+        @include tablet {
+            margin: 2rem;
 
-            }
+        } 
+    }
 
-            &__items {
-                width: 100%;
-
-
-            }
+    .nav__items{
+        &--bio{
+            border-bottom: 0.5rem solid white;
+            padding-bottom: 1rem;
         }
     }
+
 
 
 
@@ -84,17 +91,18 @@
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
-    min-height: 53vh;
+    min-height: 36vh;
     font-size: 2.4rem;
     font-weight: 700;
     align-items: center;
     display: flex;
     opacity: 80%;
 
+
     @include bg-img;
 
     @include tablet {
-        min-height: 74vh;
+        min-height: 50vh;
 
     }
 
@@ -143,6 +151,7 @@
 
         @include tablet {
             width: 90%;
+            height: 40vh;
         }
 
     }
@@ -156,7 +165,7 @@
         @include tablet {
             font-size: 2.4rem;
             line-height: 3.2rem;
-            padding: 0 4rem;
+            padding: 0 3rem;
 
             &-author {
                 font-weight: 600;
@@ -179,7 +188,7 @@
         @include tablet {
             font-size: 2.4rem;
             margin-bottom: 0;
-            padding-left: 4rem;
+            padding-left: 3rem;
         }
     }
 
@@ -200,7 +209,9 @@
         @include tablet {
             font-size: 1.4rem;
             line-height: 2.2rem;
-            padding: 0 4rem;
+            padding-right: 3rem;
+            padding-left: 3rem;
+
 
         }
     }
@@ -244,8 +255,6 @@
 .footer {
     background-color: $black-color;
     color: $white-color;
-    // display: flex;
-    // flex-direction: column;
     padding: 1.6rem;
 
     &__container {
@@ -259,6 +268,7 @@
         @include tablet {
             display: flex;
             align-items: baseline;
+
         }
     }
 
@@ -273,6 +283,17 @@
         }
     }
 
+    &__logo--top {
+        display: none;
+
+        @include tablet {
+            display: block;
+            margin-left: 6rem;
+
+        }
+
+    }
+
     &__socials {
         display: flex;
         justify-content: space-between;
@@ -282,16 +303,21 @@
         @include tablet {
             width: 0;
             align-items: baseline;
+
+
         }
     }
+
 
     &__icons {
         width: 3rem;
 
         @include tablet {
-            margin-right: 4rem;
+            margin-right: 5rem;
+
         }
     }
+
 
     &--facebook {
         width: 1.5rem;
@@ -327,34 +353,36 @@
         font-weight: 600;
         margin-top: 0;
 
+        @include tablet {
+            margin-bottom: 2rem;
+        }
+
 
     }
 
     &__address {
         width: 17rem;
+
+        @include tablet {
+            margin-bottom: 2rem;
+        }
     }
 
     &__logo {
         width: 12rem;
         margin-top: 4rem;
 
-        @include tablet {}
+    }
+
+    &__logo--bottom {
+        @include tablet {
+            display: none;
+        }
     }
 
     &__copyright {
         font-size: 1.3rem;
         font-weight: 400;
     }
-}
 
-
-.header__left,
-.header__right {
-    text-decoration: none;
-    color: $white-color;
-
-}
-
-.header__left {
-    border-bottom: 0.5rem solid white;
 }
