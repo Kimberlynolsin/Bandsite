@@ -179,6 +179,7 @@
         @include tablet {
             font-size: 2.4rem;
             margin-bottom: 0;
+            padding-left: 4rem;
         }
     }
 
@@ -186,7 +187,7 @@
         @include tablet {
             display: flex;
             padding-bottom: 4rem;
-            width: 92%;
+            width: 100%;
 
         }
     }
@@ -199,8 +200,8 @@
         @include tablet {
             font-size: 1.4rem;
             line-height: 2.2rem;
-            padding: 1rem;
-            // width: 100%;
+            padding: 0 4rem;
+
         }
     }
 }
@@ -317,38 +318,27 @@
 
     &__names {
         font-weight: 600;
-        margin-bottom: 2rem;
+        margin: 0;
 
-        @include tablet {
-            margin: 0;
-        }
+
+    }
+
+    &__company {
+        font-weight: 600;
+        margin-top: 0;
+
+
     }
 
     &__address {
-        margin-bottom: 2rem;
-
-        @include tablet {
-            margin: 0;
-            display: flex;
-            justify-content: flex-start;
-        }
-    }
-
-    &__emails {
-        margin-bottom: 2rem;
-
-        @include tablet {
-            margin: 0;
-        }
+        width: 17rem;
     }
 
     &__logo {
         width: 12rem;
         margin-top: 4rem;
 
-        @include tablet {
-           
-        }
+        @include tablet {}
     }
 
     &__copyright {
