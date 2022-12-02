@@ -8,24 +8,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0 0 0;
+    padding-top: 2rem;
+    
+
+    @include tablet {
+        flex-direction: row;
+        padding: 0;
+    }
 
 
     &__logo {
         height: 2rem;
         width: 12rem;
-        margin-top: 1.6rem;
+        
+
+        @include tablet {
+            margin: 2rem 3rem 2rem 3rem;
+            height: 4rem;
+            width: 14rem;
+        }
 
     }
 
     &__nav {
         width: 100%;
 
-    }
-
-    .header__link {
-        text-decoration: none;
-        color: $white-color;
     }
 
     &__title {
@@ -39,28 +46,40 @@
         justify-content: space-around;
         margin: 0;
         font-size: 1.4rem;
-        padding: 0;
-    }
+        padding: 1rem;
 
-    .nav__link {
-        text-decoration: none;
-        color: $white-color;
-        list-style-type: none;
-        margin: 0;
-        font-weight: 600;
-        padding-bottom: 1rem;
+        @include tablet{
+            justify-content: flex-start;
+            font-size: 2rem;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: $white-color;
+            list-style-type: none;
+            margin: 0;
+            font-weight: 400;
+            
+            @include tablet{
+                margin: 2rem;
+        
+            }
+            &__items {
+                width: 100%;
+                
+                
+            }
+        }
     }
     
-    .nav--bio{
-    border-bottom: 0.1rem solid $white-color;
-    }
-    &__item {
-        margin: 0;
-    }
-
-
-
+    
+        
 }
+
+    
+
+
+
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
@@ -70,17 +89,25 @@
     align-items: center;
     display: flex;
     opacity: 80%;
-    
-
 
     @include bg-img;
 
+    @include tablet{
+        min-height: 74vh;
+
+    }
+
 
     &__title {
-        color: $white-color;
+        color: $alabaster-color;
         justify-content: center;
         margin-left: 1.6rem;
         opacity: initial;
+
+        @include tablet{
+            font-size: 6rem;
+            
+        }
     }
 }
 
@@ -89,25 +116,57 @@
     flex-direction: column;
     margin: 1.6rem;
 
+    @include tablet{
+        margin: 0 6rem 0 6rem;
+        align-items: center;
+    
+    }
+
+    &__title-container{
+        width: 100%;
+        margin-top: 4rem;
+
+        }
+       
+        @include tablet{
+            &__title{
+                font-size: 3.6rem;
+                
+            }
+        }
+
+    
 
     &__img {
         width: 100%;
-
+        @include tablet{
+            width: 90%;
+        }
 
     }
 
     &__quote {
         color: $black-color;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 600;
         width: 100%;
+
+        @include tablet{
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+        }
 
     }
 
     &__subtitle {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 600;
         color: $darkblack-color;
+
+        @include tablet{
+            font-size: 2.4rem;
+            
+        }
     }
 
     &__details {
@@ -141,8 +200,8 @@
     display: flex;
     flex-direction: column;
     padding: 1.6rem;
-    
-    &__subtitle{
+
+    &__subtitle {
         font-size: 2.4rem;
         font-weight: 700;
 
@@ -153,43 +212,52 @@
         justify-content: space-between;
         width: 20%;
     }
-    &__icons{
+
+    &__icons {
         width: 3rem;
     }
 
-    &--facebook{
+    &--facebook {
         width: 1.5rem;
     }
-    &--twitter{
+
+    &--twitter {
         width: 3.5rem;
     }
-    &__details{
+
+    &__details {
         font-size: 1.3rem;
         font-weight: 400;
         line-height: 1.8rem;
     }
-    &__names{
+
+    &__names {
         font-weight: 600;
     }
-    &__logo{
+
+    &__logo {
         width: 12rem;
         margin-top: 4rem;
     }
-    &__copyright{
+
+    &__copyright {
         font-size: 1.3rem;
         font-weight: 400;
     }
 }
 
-.test{
+.test {
     display: flex;
     justify-content: space-evenly;
 }
-.header__left, .header__right{
+
+.header__left,
+.header__right {
     text-decoration: none;
     color: $white-color;
     // display: flex;
 }
-.header__left{
+
+.header__left {
     border-bottom: 0.5rem solid white;
 }
