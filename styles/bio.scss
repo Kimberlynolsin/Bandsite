@@ -120,13 +120,13 @@
         margin: 0 6rem 0 6rem;
         align-items: center;
     
-    }
-
-    &__title-container{
-        width: 100%;
-        margin-top: 4rem;
-
+        
+        &__title-container{
+            width: 100%;
+            margin-top: 4rem;
+            
         }
+    }
        
         @include tablet{
             &__title{
@@ -148,14 +148,25 @@
     &__quote {
         color: $black-color;
         font-size: 1.6rem;
-        font-weight: 600;
+        font-weight: 700;
         width: 100%;
 
         @include tablet{
             font-size: 2.4rem;
             line-height: 3.2rem;
+            width: 90%;
+
+            &-author{
+                font-weight: 600;
+                font-size: 1.7rem;
+                padding-top: 1.5rem;
+            }
         }
 
+    }
+
+    &__subtitle-container{
+        width: 100%;
     }
 
     &__subtitle {
@@ -165,7 +176,14 @@
 
         @include tablet{
             font-size: 2.4rem;
-            
+            margin-bottom: 0;
+        }
+    }
+
+    &__container{
+        @include tablet{
+            display: flex;
+            padding-bottom: 4rem;
         }
     }
 
@@ -173,6 +191,11 @@
         font-size: 1.3rem;
         font-weight: 400;
         line-height: 1.8rem;
+
+        @include tablet{
+            font-size: 1.4rem;
+            line-height: 2.2rem;width: 90%;
+        }
     }
 }
 
@@ -187,10 +210,25 @@
 
         margin: 0;
     }
-
+    &__images{
+        @include tablet{
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+    }
     &__list {
         width: 100%;
         margin-top: 1.6rem;
+
+        @include tablet{
+            width: 30%;
+            margin:1rem;
+        }
+
+        
     }
 }
 
