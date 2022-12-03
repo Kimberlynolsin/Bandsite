@@ -229,7 +229,8 @@
         margin: 0;
     }
 
-    &__images {
+    &__images{
+        
         @include tablet {
             display: flex;
             flex-direction: row;
@@ -239,10 +240,19 @@
         }
     }
 
+    .gallery__list:hover{
+        filter: grayscale(0);
+    }
+
     &__list {
         width: 100%;
         margin-top: 1.6rem;
-
+        filter: grayscale(1);
+        
+        &__list:hover{
+            filter: grayscale(0);
+        }
+       
         @include tablet {
             width: 30%;
             margin: 1rem;
