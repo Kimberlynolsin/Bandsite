@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 
 
 
@@ -29,6 +29,11 @@
             width: 14rem;
         }
 
+        @include desktop {
+            margin: 2rem 6rem 2rem 14rem;
+
+        }
+
     }
 
     &__nav {
@@ -41,21 +46,6 @@
         margin: 0;
     }
 
-    .nav__list {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        
-        
-
-
-        @include tablet {
-            justify-content: flex-start;
-            font-size: 2rem;
-        }
-
-    }
-
     .nav__link {
         color: $alabaster-color;
         width: 100%;
@@ -66,25 +56,43 @@
         padding-bottom: 1rem;
         text-decoration: none;
         list-style-type: none;
-        
+
         @include tablet {
             margin-right: 4rem;
             width: 6rem;
             padding-bottom: 0;
-            
+
 
         }
-        &--bio:hover{
+
+        &--bio:hover {
             border-bottom: 1px solid white;
             font-weight: 600;
         }
 
-        &--shows:hover{
+        &--shows:hover {
             @extend .nav__link--bio
         }
-        
+
     }
 
+    .nav__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        @include tablet {
+            justify-content: flex-start;
+            font-size: 2rem;
+        }
+
+        a{
+            @include desktop{
+                font-size: 2rem;
+                margin-right: 8rem;
+            }
+        }
+    }
 
 }
 
@@ -95,12 +103,15 @@
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
+    background: $black-color center cover;
+    opacity: 0.8;
     min-height: 36vh;
     font-size: 2.4rem;
     font-weight: 700;
     align-items: center;
     display: flex;
-    opacity: 80%;
+
+
 
 
     @include bg-img;
@@ -110,18 +121,28 @@
 
     }
 
+    @include desktop {
+        min-height: 58vh;
+    }
+
 
     &__title {
         color: $alabaster-color;
         justify-content: center;
         margin-left: 1.6rem;
-        opacity: initial;
-
+        
+        
         @include tablet {
             font-size: 6rem;
+            
+        }
+        
+        @include desktop{
+            margin-left: 15rem;
 
         }
     }
+
 }
 
 .article {
@@ -133,29 +154,36 @@
         margin: 0 6rem 0 6rem;
         align-items: center;
 
-
         &__title-container {
             width: 100%;
             margin-top: 4rem;
 
         }
     }
+ 
+    @include desktop {
+        margin: 0 12rem;
+    }
 
-    @include tablet {
-        &__title {
+    &__title {
+        @include tablet {
             font-size: 3.6rem;
+        }
 
+        @include desktop{
+            margin-left: 3rem;
         }
     }
 
 
 
     &__img {
-        width: 100%;
+        height: 40vh;
 
-        @include tablet {
-            width: 90%;
-            height: 40vh;
+        @include desktop {
+            width: 110%;
+            padding: 0 15rem;
+            height: 55vh;
         }
 
     }
@@ -178,6 +206,10 @@
             }
         }
 
+        @include desktop{
+            padding: 0 9rem;
+        }
+
     }
 
     &__subtitle-container {
@@ -193,6 +225,10 @@
             font-size: 2.4rem;
             margin-bottom: 0;
             padding-left: 3rem;
+        }
+
+        @include desktop {
+            padding-left: 9rem;
         }
     }
 
@@ -218,7 +254,21 @@
 
 
         }
+
+        &--left{
+            @include desktop{
+                margin-left: 6rem;
+            }
+        }
+        &--right{
+            @include desktop{
+                margin-right: 7rem;
+                padding-left: 1rem;
+            }
+        }   
     }
+
+    
 }
 
 .gallery {
@@ -227,10 +277,20 @@
     flex-direction: column;
     padding: 1.6rem;
 
+    @include desktop {
+        padding: 2rem 8rem;
+    }
+
     &__title {
         padding: 1rem 1.6rem;
-
         margin: 0;
+
+        @include tablet{
+        font-size: 3.6rem;
+        }
+        @include desktop {
+            padding-left: 4rem;
+        }
     }
 
     &__images {
@@ -271,6 +331,7 @@
     color: $white-color;
     padding: 1.6rem;
 
+
     &__container {
         @include tablet {
             margin: 0 2rem;
@@ -297,16 +358,6 @@
         }
     }
 
-    &__logo--top {
-        display: none;
-
-        @include tablet {
-            display: block;
-            margin-left: 6rem;
-
-        }
-
-    }
 
     &__socials {
         display: flex;
@@ -354,6 +405,16 @@
 
 
         }
+
+        @include desktop {
+            justify-content: flex-start;
+        }
+    }
+
+    &__contact {
+        @include desktop {
+            margin-right: 5rem;
+        }
     }
 
     &__names {
@@ -385,6 +446,21 @@
     &__logo {
         width: 12rem;
         margin-top: 4rem;
+
+    }
+
+    &__logo--top {
+        display: none;
+
+        @include tablet {
+            display: block;
+            margin-left: 6rem;
+
+        }
+
+        @include desktop {
+            margin-left: 56rem;
+        }
 
     }
 
