@@ -34,10 +34,6 @@
     width: 100%;
   }
 
-  &__title {
-    text-align: center;
-    margin: 0;
-  }
   .nav__list {
     display: flex;
     text-align: center;
@@ -82,18 +78,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 40vh;
+  min-height: 46vh;
 
   @include tablet {
-    min-height: 37vh;
+    min-height: 51vh;
   }
 
   @include desktop {
-    min-height: 125vh;
+    min-height: 70vh;
   }
 
   &::before {
-    content: "";
+    content: " ";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(../assets/Images/hero-bio.jpg);
     position: absolute;
@@ -163,19 +159,13 @@
     width: 100%;
     height: auto;
 
-    @include desktop {
-    }
-
-    @include tablet {
-      width: 100%;
-    }
   }
 
   &__quote {
     color: $black-color;
     font-size: 1.6rem;
     font-weight: 700;
-    width: 100%;
+    
 
     @include tablet {
       font-size: 2.4rem;
@@ -192,9 +182,7 @@
     }
   }
 
-  &__subtitle-container {
-    width: 100%;
-  }
+ 
 
   &__subtitle {
     font-size: 1.6rem;
@@ -212,7 +200,6 @@
     @include tablet {
       display: flex;
       padding-bottom: 4rem;
-      width: 100%;
     }
   }
 
