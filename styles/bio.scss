@@ -11,7 +11,7 @@
 
   @include tablet {
     flex-direction: row;
-    padding: 0;
+    padding: 1rem;
   }
 
   &__logo {
@@ -20,8 +20,7 @@
     margin: 3rem 0 2rem 0;
 
     @include tablet {
-      margin: 2rem 3rem;
-      margin-right: 0 4rem 0 0;
+      margin: 2rem 6rem;
       height: 4rem;
       width: 14rem;
     }
@@ -39,44 +38,9 @@
     text-align: center;
     margin: 0;
   }
-
-  .nav__link {
-    color: $alabaster-color;
-    // width: 100%;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin: 0;
-    padding-bottom: 1rem;
-    text-decoration: none;
-    list-style-type: none;
-
-    @include tablet {
-      margin-right: 4rem;
-      width: 6rem;
-      padding-bottom: 0;
-    }
-
-    &--bio:hover {
-      border-bottom: 0.5rem solid white;
-      font-weight: 600;
-
-      @include tablet {
-        // padding-bottom: 6rem;
-      }
-    }
-
-    &--shows:hover {
-      @extend .nav__link--bio;
-
-      @include tablet {
-      }
-    }
-  }
-
   .nav__list {
     display: flex;
-    justify-content: space-evenly;
+    text-align: center;
     margin: 0;
     padding: 0;
 
@@ -84,11 +48,31 @@
       justify-content: flex-start;
       font-size: 2rem;
     }
+    .nav__link {
+      color: $alabaster-color;
+      width: 100%;
+      font-size: 1.4rem;
+      padding-bottom: 1rem;
+      text-decoration: none;
+      list-style-type: none;
 
-    a {
-      @include desktop {
-        font-size: 2rem;
+      @include tablet {
         margin-right: 8rem;
+        font-size: 2.4rem;
+        width: 6rem;
+        padding-bottom: 0;
+      }
+    }
+    .nav__link--bio:hover,
+    .nav__link--shows:hover {
+      text-decoration-line: underline;
+      text-underline-offset: 1rem;
+      text-decoration-thickness: 3rem;
+      font-weight: 600;
+
+      @include tablet {
+        text-underline-offset: 4rem;
+        text-decoration-thickness: 1rem;
       }
     }
   }
@@ -96,18 +80,18 @@
 
 .hero {
   background-image: url(../assets/Images/hero-bio.jpg);
-  filter:opacity(50%);
-  filter: brightness(60%);
+  background-color: rgba(50, 50, 50);
+  opacity: 80%;
   min-height: 40vh;
   font-size: 2.4rem;
   font-weight: 700;
   display: flex;
   align-items: center;
-  
+
   @include bg-img;
 
   @include tablet {
-    min-height: 50vh;
+    min-height: 37vh;
   }
 
   @include desktop {
@@ -117,9 +101,6 @@
   &__title {
     color: $white-color;
     margin-left: 1.6rem;
-
-    
-    
 
     @include tablet {
       font-size: 6rem;
@@ -146,6 +127,10 @@
     margin: 4rem 0 2rem 1.7rem;
     font-size: 2.4rem;
 
+    @include tablet{
+        margin-bottom: 2rem;
+    }
+
     @include desktop {
       margin-left: 3rem;
     }
@@ -153,10 +138,14 @@
 
   &__section-container {
     margin: 0 1.6rem;
+
+    @include tablet{
+        margin: 0 6rem;
+    }
   }
 
   &__img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 
     @include desktop {
@@ -180,7 +169,6 @@
       &-author {
         font-weight: 600;
         font-size: 1.7rem;
-        padding-top: 1.5rem;
       }
     }
 
@@ -264,6 +252,7 @@
 
     @include tablet {
       font-size: 3.6rem;
+      padding-left: 1.3rem;
     }
 
     @include desktop {
