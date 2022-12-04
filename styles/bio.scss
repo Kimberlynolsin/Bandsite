@@ -26,7 +26,7 @@
     }
 
     @include desktop {
-      margin: 2rem 6rem 2rem 14rem;
+      margin: 2rem 6rem 2rem 12rem;
     }
   }
 
@@ -65,14 +65,14 @@
     }
     .nav__link--bio:hover,
     .nav__link--shows:hover {
-      text-decoration-line: underline;
-      text-underline-offset: 1rem;
-      text-decoration-thickness: 3rem;
       font-weight: 600;
+      border-bottom: 0.5rem solid white;
 
       @include tablet {
+        text-decoration-line: underline;
         text-underline-offset: 4rem;
         text-decoration-thickness: 1rem;
+        border-bottom: 0;
       }
     }
   }
@@ -95,7 +95,7 @@
   }
 
   @include desktop {
-    min-height: 58vh;
+    min-height: 125vh;
   }
 
   &__title {
@@ -107,7 +107,7 @@
     }
 
     @include desktop {
-      margin-left: 15rem;
+      margin-left: 12rem;
     }
   }
 }
@@ -119,28 +119,29 @@
     margin: 0;
   }
 
-  @include desktop {
-    margin: 0 12rem;
-  }
-
   &__title {
     margin: 4rem 0 2rem 1.7rem;
     font-size: 2.4rem;
 
-    @include tablet{
-        margin-bottom: 2rem;
+    @include tablet {
+      margin-bottom: 2rem;
+      font-size: 3.6rem;
     }
 
     @include desktop {
-      margin-left: 3rem;
+      margin: 5rem 0 3rem 13rem;
     }
   }
 
   &__section-container {
     margin: 0 1.6rem;
 
-    @include tablet{
-        margin: 0 6rem;
+    @include tablet {
+      margin: 0 6rem;
+    }
+
+    @include desktop {
+      margin: 0 21rem;
     }
   }
 
@@ -173,7 +174,7 @@
     }
 
     @include desktop {
-      padding: 0 9rem;
+      padding: 0;
     }
   }
 
@@ -192,9 +193,7 @@
       margin-bottom: 0;
     }
 
-    @include desktop {
-      padding-left: 9rem;
-    }
+    
   }
 
   &__container {
@@ -216,25 +215,15 @@
       padding-right: 4rem;
     }
 
-    &--left {
-      @include desktop {
-        margin-left: 6rem;
-      }
-
-      @include tablet {
-      }
+    @include desktop{
+        line-height: 2rem;
+    }
+    
+    &--right{
+        padding: 0;
     }
 
-    &--right {
-      @include desktop {
-        margin-right: 7rem;
-        padding-left: 1rem;
-      }
-
-      @include tablet {
-      }
     }
-  }
 }
 
 .gallery {
@@ -294,6 +283,10 @@
   color: $white-color;
   padding: 1.6rem;
 
+  @include desktop{
+    padding: 0 9rem 2rem 9rem;
+  }
+
   &__container {
     @include tablet {
       margin: 0 2rem;
@@ -335,6 +328,11 @@
 
     @include tablet {
       margin-right: 3rem;
+    
+      
+    }
+    @include desktop{
+        margin: 0 1rem 0 2rem;
     }
   }
 
@@ -356,6 +354,7 @@
       justify-content: space-between;
       font-size: 1.4rem;
       align-items: baseline;
+      line-height: 2rem;
     }
 
     @include desktop {
@@ -365,7 +364,7 @@
 
   &__contact {
     @include desktop {
-      margin-right: 5rem;
+      margin-right: 8rem;
     }
   }
 
@@ -405,7 +404,7 @@
     }
 
     @include desktop {
-      margin-left: 56rem;
+      margin-left: 51rem;
     }
   }
 
@@ -421,6 +420,7 @@
 
     @include tablet {
       margin-top: 4rem;
+      font-size: 1.4rem;
     }
   }
 }
