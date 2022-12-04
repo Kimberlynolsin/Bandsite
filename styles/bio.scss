@@ -49,7 +49,7 @@
       font-size: 2rem;
     }
     .nav__link {
-      color: $alabaster-color;
+      color: $mercury-color;
       width: 100%;
       font-size: 1.4rem;
       padding-bottom: 1rem;
@@ -79,16 +79,10 @@
 }
 
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
-  background-color: rgba(50, 50, 50);
-  opacity: 80%;
-  min-height: 40vh;
-  font-size: 2.4rem;
-  font-weight: 700;
+  position: relative;
   display: flex;
   align-items: center;
-
-  @include bg-img;
+  min-height: 40vh;
 
   @include tablet {
     min-height: 37vh;
@@ -98,9 +92,29 @@
     min-height: 125vh;
   }
 
+  &::before {
+    content: "";
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../assets/Images/hero-bio.jpg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.9;
+
+    @include bg-img;
+  }
+  &__container {
+    margin-left: 1.6rem;
+  }
+
   &__title {
     color: $white-color;
-    margin-left: 1.6rem;
+    position: relative;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0;
 
     @include tablet {
       font-size: 6rem;
@@ -192,8 +206,6 @@
       font-size: 2.4rem;
       margin-bottom: 0;
     }
-
-    
   }
 
   &__container {
@@ -215,15 +227,14 @@
       padding-right: 4rem;
     }
 
-    @include desktop{
-        line-height: 2rem;
-    }
-    
-    &--right{
-        padding: 0;
+    @include desktop {
+      line-height: 2rem;
     }
 
+    &--right {
+      padding: 0;
     }
+  }
 }
 
 .gallery {
@@ -283,7 +294,7 @@
   color: $white-color;
   padding: 1.6rem;
 
-  @include desktop{
+  @include desktop {
     padding: 0 9rem 2rem 9rem;
   }
 
@@ -328,11 +339,9 @@
 
     @include tablet {
       margin-right: 3rem;
-    
-      
     }
-    @include desktop{
-        margin: 0 1rem 0 2rem;
+    @include desktop {
+      margin: 0 1rem 0 2rem;
     }
   }
 
