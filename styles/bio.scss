@@ -1,478 +1,437 @@
-@use './partials/resets' as *;
-@use './partials/typography' as *;
-@use './partials/variables' as *;
-@use './partials/mixins' as *;
+@use "./partials/resets" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 
 .header {
-    background-color: $black-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: $black-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  @include tablet {
+    flex-direction: row;
+    padding: 0;
+  }
 
-
-
-    @include tablet {
-        flex-direction: row;
-        padding: 0;
-    }
-
-
-    &__logo {
-        height: 2rem;
-        width: 12rem;
-        margin: 3rem 0 2rem 0;
-
-        @include tablet {
-            margin: 2rem 3rem 2rem 3rem;
-            height: 4rem;
-            width: 14rem;
-        }
-
-        @include desktop {
-            margin: 2rem 6rem 2rem 14rem;
-
-        }
-
-    }
-
-    &__nav {
-        width: 100%;
-
-    }
-
-    &__title {
-        text-align: center;
-        margin: 0;
-    }
-
-    .nav__link {
-        color: $alabaster-color;
-        width: 100%;
-        text-align: center;
-        font-size: 1.4rem;
-        font-weight: 400;
-        margin: 0;
-        padding-bottom: 1rem;
-        text-decoration: none;
-        list-style-type: none;
-
-        @include tablet {
-            margin-right: 4rem;
-            width: 6rem;
-            padding-bottom: 0;
-
-
-        }
-
-        &--bio:hover {
-            border-bottom: 1px solid white;
-            font-weight: 600;
-        }
-
-        &--shows:hover {
-            @extend .nav__link--bio
-        }
-
-    }
-
-    .nav__list {
-        display: flex;
-        margin: 0;
-        padding: 0;
-
-        @include tablet {
-            justify-content: flex-start;
-            font-size: 2rem;
-        }
-
-        a{
-            @include desktop{
-                font-size: 2rem;
-                margin-right: 8rem;
-            }
-        }
-    }
-
-}
-
-
-
-
-
-
-.hero {
-    background-image: url(../assets/Images/hero-bio.jpg);
-    background: $black-color center cover;
-    opacity: 0.8;
-    min-height: 36vh;
-    font-size: 2.4rem;
-    font-weight: 700;
-    align-items: center;
-    display: flex;
-
-
-
-
-    @include bg-img;
+  &__logo {
+    height: 2rem;
+    width: 12rem;
+    margin: 3rem 0 2rem 0;
 
     @include tablet {
-        min-height: 50vh;
-
+      margin: 2rem 3rem;
+      margin-right: 0 4rem 0 0;
+      height: 4rem;
+      width: 14rem;
     }
 
     @include desktop {
-        min-height: 58vh;
+      margin: 2rem 6rem 2rem 14rem;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0;
+  }
+
+  .nav__link {
+    color: $alabaster-color;
+    // width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    list-style-type: none;
+
+    @include tablet {
+      margin-right: 4rem;
+      width: 6rem;
+      padding-bottom: 0;
     }
 
+    &--bio:hover {
+      border-bottom: 0.5rem solid white;
+      font-weight: 600;
 
-    &__title {
-        color: $alabaster-color;
-        justify-content: center;
-        margin-left: 1.6rem;
-        
-        
-        @include tablet {
-            font-size: 6rem;
-            
-        }
-        
-        @include desktop{
-            margin-left: 15rem;
-
-        }
+      @include tablet {
+        // padding-bottom: 6rem;
+      }
     }
 
+    &--shows:hover {
+      @extend .nav__link--bio;
+
+      @include tablet {
+      }
+    }
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+
+    @include tablet {
+      justify-content: flex-start;
+      font-size: 2rem;
+    }
+
+    a {
+      @include desktop {
+        font-size: 2rem;
+        margin-right: 8rem;
+      }
+    }
+  }
+}
+
+.hero {
+  background-image: url(../assets/Images/hero-bio.jpg);
+  filter:opacity(50%);
+  filter: brightness(60%);
+  min-height: 40vh;
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  
+  @include bg-img;
+
+  @include tablet {
+    min-height: 50vh;
+  }
+
+  @include desktop {
+    min-height: 58vh;
+  }
+
+  &__title {
+    color: $white-color;
+    margin-left: 1.6rem;
+
+    
+    
+
+    @include tablet {
+      font-size: 6rem;
+    }
+
+    @include desktop {
+      margin-left: 15rem;
+    }
+  }
 }
 
 .article {
-    display: flex;
-    flex-direction: column;
-    margin: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    margin: 0 12rem;
+  }
+
+  &__title {
+    margin: 4rem 0 2rem 1.7rem;
+    font-size: 2.4rem;
+
+    @include desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__section-container {
+    margin: 0 1.6rem;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+
+    @include desktop {
+    }
 
     @include tablet {
-        margin: 0 6rem 0 6rem;
-        align-items: center;
-
-        &__title-container {
-            width: 100%;
-            margin-top: 4rem;
-
-        }
+      width: 100%;
     }
- 
-    @include desktop {
-        margin: 0 12rem;
-    }
+  }
 
-    &__title {
-        @include tablet {
-            font-size: 3.6rem;
-        }
+  &__quote {
+    color: $black-color;
+    font-size: 1.6rem;
+    font-weight: 700;
+    width: 100%;
 
-        @include desktop{
-            margin-left: 3rem;
-        }
-    }
+    @include tablet {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
 
-
-
-    &__img {
-        height: 40vh;
-
-        @include desktop {
-            width: 110%;
-            padding: 0 15rem;
-            height: 55vh;
-        }
-
-    }
-
-    &__quote {
-        color: $black-color;
-        font-size: 1.6rem;
-        font-weight: 700;
-        width: 100%;
-
-        @include tablet {
-            font-size: 2.4rem;
-            line-height: 3.2rem;
-            padding: 0 3rem;
-
-            &-author {
-                font-weight: 600;
-                font-size: 1.7rem;
-                padding-top: 1.5rem;
-            }
-        }
-
-        @include desktop{
-            padding: 0 9rem;
-        }
-
-    }
-
-    &__subtitle-container {
-        width: 100%;
-    }
-
-    &__subtitle {
-        font-size: 1.6rem;
+      &-author {
         font-weight: 600;
-        color: $darkblack-color;
-
-        @include tablet {
-            font-size: 2.4rem;
-            margin-bottom: 0;
-            padding-left: 3rem;
-        }
-
-        @include desktop {
-            padding-left: 9rem;
-        }
+        font-size: 1.7rem;
+        padding-top: 1.5rem;
+      }
     }
 
-    &__container {
-        @include tablet {
-            display: flex;
-            padding-bottom: 4rem;
-            width: 100%;
+    @include desktop {
+      padding: 0 9rem;
+    }
+  }
 
-        }
+  &__subtitle-container {
+    width: 100%;
+  }
+
+  &__subtitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    color: $darkblack-color;
+
+    @include tablet {
+      font-size: 2.4rem;
+      margin-bottom: 0;
     }
 
-    &__details {
-        font-size: 1.3rem;
-        font-weight: 400;
-        line-height: 1.8rem;
+    @include desktop {
+      padding-left: 9rem;
+    }
+  }
 
-        @include tablet {
-            font-size: 1.4rem;
-            line-height: 2.2rem;
-            padding-right: 3rem;
-            padding-left: 3rem;
+  &__container {
+    @include tablet {
+      display: flex;
+      padding-bottom: 4rem;
+      width: 100%;
+    }
+  }
 
+  &__details {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8rem;
 
-        }
-
-        &--left{
-            @include desktop{
-                margin-left: 6rem;
-            }
-        }
-        &--right{
-            @include desktop{
-                margin-right: 7rem;
-                padding-left: 1rem;
-            }
-        }   
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      padding-right: 4rem;
     }
 
-    
+    &--left {
+      @include desktop {
+        margin-left: 6rem;
+      }
+
+      @include tablet {
+      }
+    }
+
+    &--right {
+      @include desktop {
+        margin-right: 7rem;
+        padding-left: 1rem;
+      }
+
+      @include tablet {
+      }
+    }
+  }
 }
 
 .gallery {
-    background-color: $alabaster-color;
-    display: flex;
-    flex-direction: column;
-    padding: 1.6rem;
+  background-color: $alabaster-color;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+
+  @include desktop {
+    padding: 2rem 8rem;
+  }
+
+  &__title {
+    margin: 0;
+
+    @include tablet {
+      font-size: 3.6rem;
+    }
 
     @include desktop {
-        padding: 2rem 8rem;
+      padding-left: 4rem;
+    }
+  }
+
+  &__images {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .gallery__list:hover {
+    filter: grayscale(0);
+  }
+
+  &__list {
+    width: 100%;
+    margin-top: 1.6rem;
+    filter: grayscale(1);
+
+    &__list:hover {
+      filter: grayscale(0);
     }
 
-    &__title {
-        padding: 1rem 1.6rem;
-        margin: 0;
-
-        @include tablet{
-        font-size: 3.6rem;
-        }
-        @include desktop {
-            padding-left: 4rem;
-        }
+    @include tablet {
+      width: 30%;
+      margin: 1rem;
     }
-
-    &__images {
-
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-
-        }
-    }
-
-    .gallery__list:hover {
-        filter: grayscale(0);
-    }
-
-    &__list {
-        width: 100%;
-        margin-top: 1.6rem;
-        filter: grayscale(1);
-
-        &__list:hover {
-            filter: grayscale(0);
-        }
-
-        @include tablet {
-            width: 30%;
-            margin: 1rem;
-        }
-
-
-    }
+  }
 }
 
 .footer {
-    background-color: $black-color;
-    color: $white-color;
-    padding: 1.6rem;
+  background-color: $black-color;
+  color: $white-color;
+  padding: 1.6rem;
 
+  &__container {
+    @include tablet {
+      margin: 0 2rem;
+    }
+  }
 
-    &__container {
-        @include tablet {
-            margin: 0 2rem;
+  &__container-icons {
+    @include tablet {
+      display: flex;
+      align-items: baseline;
+    }
+  }
 
-        }
+  &__subtitle {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      font-size: 3.6rem;
+      margin-right: 4rem;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      width: 0;
+      align-items: baseline;
+    }
+  }
+
+  &__icons {
+    width: 3rem;
+
+    @include tablet {
+      margin-right: 3rem;
+    }
+  }
+
+  &--facebook {
+    width: 1.5rem;
+  }
+
+  &--twitter {
+    width: 3.5rem;
+  }
+
+  &__details {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      align-items: baseline;
     }
 
-    &__container-icons {
-        @include tablet {
-            display: flex;
-            align-items: baseline;
+    @include desktop {
+      justify-content: flex-start;
+    }
+  }
 
-        }
+  &__contact {
+    @include desktop {
+      margin-right: 5rem;
+    }
+  }
+
+  &__names {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__company {
+    font-weight: 600;
+    margin-top: 0;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__address {
+    width: 17rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__logo {
+    width: 12rem;
+    margin-top: 4rem;
+  }
+
+  &__logo--top {
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-left: 16rem;
     }
 
-    &__subtitle {
-        font-size: 2.4rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-
-        @include tablet {
-            font-size: 3.6rem;
-            margin-right: 4rem;
-        }
+    @include desktop {
+      margin-left: 56rem;
     }
+  }
 
-
-    &__socials {
-        display: flex;
-        justify-content: space-between;
-        width: 20%;
-        margin-bottom: 2rem;
-
-        @include tablet {
-            width: 0;
-            align-items: baseline;
-
-
-        }
+  &__logo--bottom {
+    @include tablet {
+      display: none;
     }
+  }
 
+  &__copyright {
+    font-size: 1.3rem;
+    font-weight: 400;
 
-    &__icons {
-        width: 3rem;
-
-        @include tablet {
-            margin-right: 5rem;
-
-        }
+    @include tablet {
+      margin-top: 4rem;
     }
-
-
-    &--facebook {
-        width: 1.5rem;
-    }
-
-    &--twitter {
-        width: 3.5rem;
-    }
-
-    &__details {
-        font-size: 1.3rem;
-        font-weight: 400;
-        line-height: 1.8rem;
-
-        @include tablet {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.4rem;
-            align-items: baseline;
-
-
-        }
-
-        @include desktop {
-            justify-content: flex-start;
-        }
-    }
-
-    &__contact {
-        @include desktop {
-            margin-right: 5rem;
-        }
-    }
-
-    &__names {
-        font-weight: 600;
-        margin: 0;
-
-
-    }
-
-    &__company {
-        font-weight: 600;
-        margin-top: 0;
-
-        @include tablet {
-            margin-bottom: 2rem;
-        }
-
-
-    }
-
-    &__address {
-        width: 17rem;
-
-        @include tablet {
-            margin-bottom: 2rem;
-        }
-    }
-
-    &__logo {
-        width: 12rem;
-        margin-top: 4rem;
-
-    }
-
-    &__logo--top {
-        display: none;
-
-        @include tablet {
-            display: block;
-            margin-left: 6rem;
-
-        }
-
-        @include desktop {
-            margin-left: 56rem;
-        }
-
-    }
-
-    &__logo--bottom {
-        @include tablet {
-            display: none;
-        }
-    }
-
-    &__copyright {
-        font-size: 1.3rem;
-        font-weight: 400;
-    }
-
+  }
 }
