@@ -1,0 +1,27 @@
+@use './variables' as *;
+
+@mixin mobile {
+    @media (min-width: $xs-breakpoint) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $s-breakpoint)  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $m-breakpoint) {
+        @content;
+    }
+}
+
+
+@mixin bg-img {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    
+    
+}
