@@ -259,21 +259,11 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 46vh;
-}
-@media (min-width: 768px) {
-  .hero {
-    min-height: 51vh;
-  }
-}
-@media (min-width: 1280px) {
-  .hero {
-    min-height: 70vh;
-  }
+  min-height: 58vw;
 }
 .hero::before {
-  content: " ";
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
+  content: " ";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -282,7 +272,8 @@ body {
   opacity: 0.9;
   background-size: cover;
   background-position: center;
-  width: 100%;
+  background-size: cover;
+  background-position: center;
 }
 .hero__container {
   margin-left: 1.6rem;
