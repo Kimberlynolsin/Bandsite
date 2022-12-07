@@ -2,7 +2,7 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
-
+@use "../styles/partials/global" as *;
 
 .hero {
   position: relative;
