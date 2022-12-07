@@ -303,10 +303,17 @@ body {
   font-weight: 400;
   margin: 0;
 }
+.hero__title {
+  padding: 2rem 0;
+  width: 34%;
+}
 .hero__music {
   position: relative;
   display: flex;
+  flex-direction: column;
 }
 .hero__music iframe {
-  width: 50vw;
+  width: 95.5vw;
+  height: 17rem;
+  border-radius: 0.5rem;
 }/*# sourceMappingURL=shows.css.map */
