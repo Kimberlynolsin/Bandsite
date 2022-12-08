@@ -67,48 +67,59 @@ const showsArray = [
 ];
 
 let ticketSection = document.querySelector(".ticket");
+
+let ticketTitle = document.createElement("h2");
+ticketTitle.classList.add("ticket__title")
+ticketTitle.innerText = "Shows";
+
+ticketSection.appendChild(ticketTitle)
+
 for (i = 0; i < showsArray.length; i++) {
   let shows = showsArray[i];
-  
+
   let ticketContainer = document.createElement("div");
   ticketContainer.classList.add("ticket-container");
-  
-  
+
   let ticketSubtitle = document.createElement("h3");
   ticketSubtitle.classList.add("ticket__subtitle");
   ticketSubtitle.innerText = "Date";
-  
+
   let ticketDescription = document.createElement("p");
   ticketDescription.classList.add("ticket__description");
   ticketDescription.innerText = shows.date;
-  
-  
+
   let ticketVenue = document.createElement("h3");
   ticketVenue.classList.add("ticket__subtitle");
   ticketVenue.innerText = "Venue";
-  
+
   let ticketVenueName = document.createElement("p");
   ticketVenueName.classList.add("ticket__description");
   ticketVenueName.innerText = shows.venue;
-  
+
   let ticketLocation = document.createElement("h3");
   ticketLocation.classList.add("ticket__subtitle");
   ticketLocation.innerText = "Location";
-  
+
   let ticketLocationName = document.createElement("p");
   ticketLocationName.classList.add("ticket__description");
   ticketLocationName.innerText = shows.location;
   
+  let btn = document.createElement("button")
+  btn.classList.add("ticket__btn")
+  btn.innerText = "Buy Tickets"
+
   ticketSection.appendChild(ticketContainer);
-  ticketSection.appendChild(ticketSubtitle);
-  ticketSection.appendChild(ticketDescription);
-  ticketSection.appendChild(ticketVenue);
-  ticketSection.appendChild(ticketVenueName);
-  ticketSection.appendChild(ticketLocation);
- ticketSection.appendChild(ticketLocationName);
+  ticketContainer.appendChild(ticketSubtitle);
+  ticketContainer.appendChild(ticketDescription);
+  ticketContainer.appendChild(ticketVenue);
+  ticketContainer.appendChild(ticketVenueName);
+  ticketContainer.appendChild(ticketLocation);
+  ticketContainer.appendChild(ticketLocationName);
+  ticketContainer.appendChild(btn)
 }
 
-let ticketTitle = document.createElement("h2");
-ticketTitle.innerText = "Shows";
+
+
+
 
 

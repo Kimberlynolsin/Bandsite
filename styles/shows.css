@@ -322,8 +322,12 @@ body {
   flex-direction: column;
 }
 .ticket-container {
-  background-color: black;
   margin: 0 1.6rem;
+  border-bottom: 0.2rem solid #E1E1E1;
+}
+.ticket__title {
+  font-size: 3.6rem;
+  margin-left: 1.6rem;
 }
 .ticket__subtitle {
   color: #AFAFAF;
@@ -331,4 +335,15 @@ body {
 }
 .ticket__description {
   margin-top: 0.5rem;
+}
+.ticket__btn {
+  width: 100%;
+  padding: 2rem;
+  background-color: #323232;
+  color: white;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  border-style: initial;
+  font-size: 2.4rem;
 }/*# sourceMappingURL=shows.css.map */

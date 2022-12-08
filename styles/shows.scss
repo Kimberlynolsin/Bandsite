@@ -44,9 +44,14 @@
   flex-direction: column;
 
   &-container {
-    background-color: black;
     margin: 0 1.6rem;
+    border-bottom: 0.2rem solid $mercury-color;
    
+  }
+
+  &__title{
+    font-size: 3.6rem;
+    margin-left: 1.6rem;
   }
 
   &__subtitle {
@@ -56,5 +61,17 @@
 
   &__description{
     margin-top: 0.5rem;
+  }
+
+  &__btn{
+    width: 100%;
+    padding: 2rem;
+    background-color: $black-color;
+    color: white;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    border-style: initial;
+    font-size: 2.4rem;
   }
 }
