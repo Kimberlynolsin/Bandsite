@@ -13,26 +13,6 @@
     </section>
 */
 
-/*
-Date
-"Mon Sept 06 2021",
-"Tue Sept 21 2021",
-"Fri Oct 15 2021",
-"Sat Nov 06 2021",
-"Fri 26 2021",
-"Wed Dec 15 2021",
-*/
-
-/*
-Venue
-"Ronald Lane",
-"Pier 3 East",
-"View Lounge",
-"Hyatt Agency",
-"Moscow Center",
-"Press Club"
-*/
-
 const showsArray = [
   {
     date: "Mon Sept 06 2021",
@@ -68,58 +48,43 @@ const showsArray = [
 
 let ticketSection = document.querySelector(".ticket");
 
+// The function accepts: the type of element to create, the class to add, the text to use, the container to add the element to
+let createElementWithClass = (type, className, text, container) => {
+  // Create the specified element
+  let element = document.createElement(type);
+  element.classList.add(className);
+  element.innerText = text;
+
+  // Add the newly created element to the container provided
+  container.appendChild(element)
+};
+
+// Create the title
 let ticketTitle = document.createElement("h2");
-ticketTitle.classList.add("ticket__title")
+ticketTitle.classList.add("ticket__title");
 ticketTitle.innerText = "Shows";
+ticketSection.appendChild(ticketTitle);
 
-ticketSection.appendChild(ticketTitle)
-
+// Loop of shows
 for (i = 0; i < showsArray.length; i++) {
-  let shows = showsArray[i];
+  // Create a variable for the individual show in this current loop
+  let show = showsArray[i];
 
+  // Create a container, in this loop, and give it to the function below
   let ticketContainer = document.createElement("div");
-  ticketContainer.classList.add("ticket-container");
+  ticketContainer.classList.add("ticket-container")
 
-  let ticketSubtitle = document.createElement("h3");
-  ticketSubtitle.classList.add("ticket__subtitle");
-  ticketSubtitle.innerText = "Date";
+  // Add a h3, and add it to the container
+  createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
 
-  let ticketDescription = document.createElement("p");
-  ticketDescription.classList.add("ticket__description");
-  ticketDescription.innerText = shows.date;
+  // Same as above
+  createElementWithClass("p", "ticket__description", show.date, ticketContainer);
+  createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
+  createElementWithClass("p", "ticket__description", show.venue, ticketContainer);
+  createElementWithClass("h3", "ticket__subtitle", "Location", ticketContainer);
+  createElementWithClass("p", "ticket__description", show.location, ticketContainer);
+  createElementWithClass("button", "ticket__btn", "Buy Tickets", ticketContainer);
 
-  let ticketVenue = document.createElement("h3");
-  ticketVenue.classList.add("ticket__subtitle");
-  ticketVenue.innerText = "Venue";
-
-  let ticketVenueName = document.createElement("p");
-  ticketVenueName.classList.add("ticket__description");
-  ticketVenueName.innerText = shows.venue;
-
-  let ticketLocation = document.createElement("h3");
-  ticketLocation.classList.add("ticket__subtitle");
-  ticketLocation.innerText = "Location";
-
-  let ticketLocationName = document.createElement("p");
-  ticketLocationName.classList.add("ticket__description");
-  ticketLocationName.innerText = shows.location;
-  
-  let btn = document.createElement("button")
-  btn.classList.add("ticket__btn")
-  btn.innerText = "Buy Tickets"
-
+  // Add the container with all the elmenets to the section
   ticketSection.appendChild(ticketContainer);
-  ticketContainer.appendChild(ticketSubtitle);
-  ticketContainer.appendChild(ticketDescription);
-  ticketContainer.appendChild(ticketVenue);
-  ticketContainer.appendChild(ticketVenueName);
-  ticketContainer.appendChild(ticketLocation);
-  ticketContainer.appendChild(ticketLocationName);
-  ticketContainer.appendChild(btn)
 }
-
-
-
-
-
-
