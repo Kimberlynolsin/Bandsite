@@ -300,12 +300,11 @@ body {
   color: #FFFFFF;
   position: relative;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
 }
 .hero__title {
   padding: 2rem 0;
-  width: 34%;
 }
 .hero__music {
   position: relative;
@@ -313,7 +312,23 @@ body {
   flex-direction: column;
 }
 .hero__music iframe {
-  width: 95.5vw;
+  width: 96vw;
   height: 17rem;
   border-radius: 0.5rem;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+}
+.ticket-container {
+  background-color: black;
+  margin: 0 1.6rem;
+}
+.ticket__subtitle {
+  color: #AFAFAF;
+  margin: 0;
+}
+.ticket__description {
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=shows.css.map */

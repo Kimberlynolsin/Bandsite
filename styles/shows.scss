@@ -19,13 +19,12 @@
     color: $white-color;
     position: relative;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0;
   }
 
-  &__title{
+  &__title {
     padding: 2rem 0;
-    width: 34%;
   }
 
   &__music {
@@ -33,9 +32,29 @@
     display: flex;
     flex-direction: column;
     iframe {
-      width: 95.5vw;
+      width: 96vw;
       height: 17rem;
       border-radius: 0.5rem;
     }
+  }
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+
+  &-container {
+    background-color: black;
+    margin: 0 1.6rem;
+   
+  }
+
+  &__subtitle {
+    color: $silver-color;
+    margin: 0;
+  }
+
+  &__description{
+    margin-top: 0.5rem;
   }
 }
