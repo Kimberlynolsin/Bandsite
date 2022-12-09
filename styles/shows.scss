@@ -42,11 +42,24 @@
 .ticket {
   display: flex;
   flex-direction: column;
+  @include tablet{
+    // display: none;
+  }
+
+ 
 
   &-container {
-    margin:1.6rem;
+    padding:1.6rem;
     border-bottom: 0.2rem solid $mercury-color;
+    // display: flex;
+
    
+    &:hover{
+      background-color: $alabaster-color;
+      &:focus{
+        background-color: $mercury-color;
+      }
+    }
   }
 
   &__title{
@@ -56,13 +69,20 @@
 
   &__subtitle {
     color: $silver-color;
-    margin: 0;
+    margin: 2rem 0;
+    font-weight: 400;
+         @include tablet{
+    flex-direction: row;
   }
-
+  }
+  &__date{
+    font-weight: 700;
+  }
   &__description{
     margin-top: 0.5rem;
+    
   }
-
+  
   &__btn{
     width: 100%;
     padding: 2rem;

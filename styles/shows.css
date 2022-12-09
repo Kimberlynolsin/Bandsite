@@ -322,8 +322,14 @@ body {
   flex-direction: column;
 }
 .ticket-container {
-  margin: 1.6rem;
+  padding: 1.6rem;
   border-bottom: 0.2rem solid #E1E1E1;
+}
+.ticket-container:hover {
+  background-color: #FAFAFA;
+}
+.ticket-container:hover:focus {
+  background-color: #E1E1E1;
 }
 .ticket__title {
   font-size: 2.4rem;
@@ -331,7 +337,16 @@ body {
 }
 .ticket__subtitle {
   color: #AFAFAF;
-  margin: 0;
+  margin: 2rem 0;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .ticket__subtitle {
+    flex-direction: row;
+  }
+}
+.ticket__date {
+  font-weight: 700;
 }
 .ticket__description {
   margin-top: 0.5rem;
