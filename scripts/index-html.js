@@ -33,7 +33,7 @@ const commentsArray = [
 
 // console.log(commentsArray[0].user)
 
-const comments = document.querySelector(".comments");
+const comments = document.querySelector(".comment");
 
 const commentTitle = document.createElement("h2");
 commentTitle.classList.add("comment__title");
@@ -85,6 +85,9 @@ const displayComment = (text) =>{
     
     const commentPlaceholder = document.createElement("div")
     commentPlaceholder.classList.add("comment__placeholder")
+
+    const commentTimestamp = document.createElement("div")
+    commentTimestamp.classList.add("comment__timestamp")
     
     const commentName = document.createElement("p")
     commentName.classList.add("comment__name")
@@ -101,8 +104,11 @@ const displayComment = (text) =>{
 
     commentContainer.appendChild(commentPlaceholder)
     comments.appendChild(commentContainer)
-    commentContainer.appendChild(commentName)
-    commentContainer.appendChild(commentDate)
+
+    commentContainer.appendChild(commentTimestamp)
+    
+    commentTimestamp.appendChild(commentName)
+    commentTimestamp.appendChild(commentDate)
     commentContainer.appendChild(comment)
 }
 

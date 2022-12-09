@@ -447,4 +447,27 @@ body {
     width: 30%;
     margin: 1rem;
   }
+}
+
+.comment__title {
+  margin-left: 1.6rem;
+}
+.comment-container {
+  padding: 0 1.6rem;
+  border-bottom: 0.2rem solid #E1E1E1;
+}
+.comment__placeholder {
+  background-color: black;
+  border-radius: 50%;
+  width: 10rem;
+}
+.comment__timestamp {
+  display: flex;
+  justify-content: space-between;
+}
+.comment__name {
+  font-weight: 700;
+}
+.comment__date {
+  color: #AFAFAF;
 }/*# sourceMappingURL=bio.css.map */

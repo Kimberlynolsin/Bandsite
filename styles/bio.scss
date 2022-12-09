@@ -169,3 +169,34 @@
   }
 }
 
+.comment{
+
+ &__title{
+  margin-left: 1.6rem;
+ }
+  
+  &-container{
+    padding: 0 1.6rem;
+    border-bottom: 0.2rem solid $mercury-color;
+    // display: flex;
+  }
+  
+  &__placeholder{
+    background-color: black;
+  border-radius: 50%;
+  width: 10rem;
+}
+
+&__timestamp{
+  display: flex;
+  justify-content: space-between;
+}
+
+&__name{
+  font-weight: 700;
+}
+
+&__date{
+  color: $silver-color;
+}
+}
