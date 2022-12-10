@@ -52,11 +52,11 @@ body {
 .header__logo {
   height: 2rem;
   width: 12rem;
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 }
 @media (min-width: 768px) {
   .header__logo {
-    margin: 2rem 6rem 2rem 1rem;
+    margin: 2rem 6rem 2rem 1.6rem;
     height: 4rem;
     width: 14rem;
   }
@@ -117,7 +117,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 58vw;
+  min-height: 60vw;
 }
 .hero__title {
   color: #FFFFFF;
@@ -300,11 +300,24 @@ body {
   color: #FFFFFF;
   position: relative;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .hero__text {
+    font-size: 2.4rem;
+  }
 }
 .hero__title {
   padding: 2rem 0;
+  width: 21rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    width: 53rem;
+    padding-top: 1rem;
+  }
 }
 .hero__music {
   position: relative;
@@ -313,17 +326,36 @@ body {
 }
 .hero__music iframe {
   width: 96vw;
-  height: 17rem;
+  height: 20rem;
   border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+  .hero__music iframe {
+    width: 55vw;
+    height: 14rem;
+  }
 }
 
 .ticket {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .ticket {
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+}
 .ticket-container {
   padding: 1.6rem;
   border-bottom: 0.2rem solid #E1E1E1;
+}
+@media (min-width: 768px) {
+  .ticket-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .ticket-container:hover {
   background-color: #FAFAFA;
@@ -343,13 +375,24 @@ body {
 @media (min-width: 768px) {
   .ticket__subtitle {
     flex-direction: row;
+    display: none;
   }
 }
 .ticket__date {
   font-weight: 700;
 }
+@media (min-width: 768px) {
+  .ticket__date {
+    margin: 0;
+  }
+}
 .ticket__description {
   margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .ticket__description {
+    margin: 0;
+  }
 }
 .ticket__btn {
   width: 100%;
@@ -357,8 +400,15 @@ body {
   background-color: #323232;
   color: white;
   margin-bottom: 2rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   text-transform: uppercase;
   border-style: initial;
-  font-size: 2.4rem;
+  font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+  .ticket__btn {
+    width: 25%;
+    margin-bottom: 0;
+    padding: 1rem 2rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

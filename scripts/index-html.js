@@ -109,6 +109,50 @@ for(i = 0; i < commentsArray.length; i++){
 }
 
 
+/*
+1. add event listener to "submit"
+const submit = document.getElementById("submit")
+
+submit.addEventListener('submit', (event)=>{
+  event.preventDefault()
+
+   const newUserName = event.target.name.value
+   const newUserComment = event.target.comment.value
 
 
+  const commentContainer = document.createElement("div")
+  commentContainer.classList.add("comment-container")
+
+  commentContainer.prepend(event)
+})
+
+2. store the date (new comments)
+x.toLocaleDateString("en-US")
+3. append new comments with time stamp to the mommy container
+*/
+
+// const submitBtn = document.getElementById("submit")
+// console.log(submitBtn)
+
+// console.log('\n')
+
+// submit.addEventListener('submit', (event)=>{
+  
+//   event.preventDefault()
+
+//   //storing the data in variables
+//    const newUserName = event.target.name.value
+//    const newUserComment = event.target.comment.value
+//    const newComment = displayComment({name:newUserName, date:date.toLocaleDateString("en-US"), comment:newUserComment})
+
+// //whenever the submit button is clicked, we want it to prepend to the parent container
+
+
+
+//   comments.prepend(newComment)
+  
+
+
+
+// })
 

@@ -13,18 +13,32 @@
     margin-left: 1.6rem;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      // margin: 0 3.6rem;
+    }
   }
 
   &__text {
     color: $white-color;
     position: relative;
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
+
+    @include tablet {
+      font-size: 2.4rem;
+    }
   }
 
   &__title {
     padding: 2rem 0;
+    width: 21rem;
+    font-weight: 600;
+    @include tablet {
+      width: 53rem;
+      padding-top: 1rem;
+    }
   }
 
   &__music {
@@ -33,8 +47,13 @@
     flex-direction: column;
     iframe {
       width: 96vw;
-      height: 17rem;
+      height: 20rem;
       border-radius: 0.5rem;
+
+      @include tablet {
+        width: 55vw;
+        height: 14rem;
+      }
     }
   }
 }
@@ -42,27 +61,34 @@
 .ticket {
   display: flex;
   flex-direction: column;
-  @include tablet{
+  @include tablet {
     // display: none;
+    margin: 0;
+    margin-bottom: 4rem;
   }
 
- 
-
   &-container {
-    padding:1.6rem;
+    padding: 1.6rem;
     border-bottom: 0.2rem solid $mercury-color;
-    // display: flex;
+    
 
-   
-    &:hover{
+    @include tablet{
+      display: flex;
+      justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 2rem;
+    }
+    &:hover {
       background-color: $alabaster-color;
-      &:focus{
+      &:focus {
         background-color: $mercury-color;
       }
     }
+
+    
   }
 
-  &__title{
+  &__title {
     font-size: 2.4rem;
     margin-left: 1.6rem;
   }
@@ -71,27 +97,40 @@
     color: $silver-color;
     margin: 2rem 0;
     font-weight: 400;
-         @include tablet{
-    flex-direction: row;
+    @include tablet {
+      flex-direction: row;
+      display: none;
+    }
   }
-  }
-  &__date{
+  &__date {
     font-weight: 700;
+
+    @include tablet{
+      margin: 0;
+    }
   }
-  &__description{
+  &__description {
     margin-top: 0.5rem;
-    
+    @include tablet{
+      margin: 0;
+    }
   }
-  
-  &__btn{
+
+  &__btn {
     width: 100%;
     padding: 2rem;
     background-color: $black-color;
     color: white;
     margin-bottom: 2rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     text-transform: uppercase;
     border-style: initial;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
+
+    @include tablet{
+      width:25%;
+      margin-bottom: 0;
+      padding: 1rem 2rem;
+    }
   }
 }

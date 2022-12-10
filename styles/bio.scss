@@ -30,6 +30,7 @@
     @include tablet {
       margin-bottom: 2rem;
       font-size: 3.6rem;
+      
     }
 
     @include desktop {
@@ -168,31 +169,52 @@
 }
 
 .comment {
+  margin-bottom: 2rem;
+  @include tablet {
+    margin-bottom: 4rem;
+  }
+
+  @include desktop {
+    margin: 0 21rem;
+    margin-bottom: 4rem;
+  }
   &__title {
     margin-left: 1.6rem;
+
+    @include tablet {
+      font-size: 3.6rem;
+    }
   }
   &__form {
     border-bottom: 0.2rem solid $mercury-color;
     margin: 1.6rem;
     display: flex;
+
+    @include tablet {
+      margin: 0 8rem;
+    }
   }
 
-  &__container {
+  &__input-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
     flex-grow: 1;
+  }
+  img {
+    border-radius: 50%;
+    width: 3.6rem;
+    height: 3.6rem;
+    margin: 2rem;
+    margin-top: 4rem;
 
+    @include tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
-  img{
-  border-radius: 50%;
-  width: 4.8rem;
-  height: 4.8rem;
-  margin: 2rem;
-  margin-top: 3rem;
-  }
-    
-  label{
+
+  label {
     color: $silver-color;
     text-transform: uppercase;
     font-weight: 600;
@@ -204,14 +226,20 @@
     padding: 2rem;
     border: solid $mercury-color;
     border-radius: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: "Avenir";
+    background-color: $alabaster-color;
   }
-  
+
   textarea {
     padding: 2rem;
     font-family: "Avenir";
     margin-bottom: 2rem;
     border: solid $mercury-color;
     border-radius: 0.5rem;
+    font-size: 1.4rem;
+    background-color: $alabaster-color;
   }
 
   [type="submit"] {
@@ -220,20 +248,37 @@
     border-style: initial;
     border-radius: 0.5rem;
     padding: 2rem;
+
+    @include tablet {
+      margin-left: 34rem;
+    }
+    @include desktop {
+      margin-left: 40rem;
+    }
   }
 
   &-container {
-    margin:1.6rem;
+    margin: 1.6rem;
     border-bottom: 0.2rem solid $mercury-color;
     display: flex;
+
+    @include tablet {
+      margin: 0 8rem;
+    }
   }
 
   &__placeholder {
     background-color: $mercury-color;
     border-radius: 50%;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 3.6rem;
+    height: 3.6rem;
     margin: 0 2rem;
+
+    @include tablet {
+      margin: 1rem 2rem;
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
 
   &__timestamp {
@@ -242,15 +287,31 @@
   }
 
   &__name {
-    font-weight: 700;
-    width: 33rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    width: 56rem;
+    margin: auto;
+
+    @include tablet {
+      width: 43rem;
+      margin: 1rem 0;
+    }
+
+    @include desktop {
+      width: 52rem;
+    }
   }
 
-  &__para{
+  &__para {
     font-weight: 400;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
   }
 
   &__date {
     color: $silver-color;
+    margin: 0;
   }
 }

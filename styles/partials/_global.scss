@@ -35,10 +35,10 @@ body {
   &__logo {
     height: 2rem;
     width: 12rem;
-    margin: 3rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
 
     @include tablet {
-      margin: 2rem 6rem 2rem 1rem;
+      margin: 2rem 6rem 2rem 1.6rem;
       height: 4rem;
       width: 14rem;
     }
@@ -96,7 +96,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 58vw;
+  min-height: 60vw;
  
   &__title {
     color: $white-color;

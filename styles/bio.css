@@ -52,11 +52,11 @@ body {
 .header__logo {
   height: 2rem;
   width: 12rem;
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 }
 @media (min-width: 768px) {
   .header__logo {
-    margin: 2rem 6rem 2rem 1rem;
+    margin: 2rem 6rem 2rem 1.6rem;
     height: 4rem;
     width: 14rem;
   }
@@ -117,7 +117,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 58vw;
+  min-height: 60vw;
 }
 .hero__title {
   color: #FFFFFF;
@@ -449,15 +449,39 @@ body {
   }
 }
 
+.comment {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .comment {
+    margin-bottom: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment {
+    margin: 0 21rem;
+    margin-bottom: 4rem;
+  }
+}
 .comment__title {
   margin-left: 1.6rem;
+}
+@media (min-width: 768px) {
+  .comment__title {
+    font-size: 3.6rem;
+  }
 }
 .comment__form {
   border-bottom: 0.2rem solid #E1E1E1;
   margin: 1.6rem;
   display: flex;
 }
-.comment__container {
+@media (min-width: 768px) {
+  .comment__form {
+    margin: 0 8rem;
+  }
+}
+.comment__input-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -465,10 +489,16 @@ body {
 }
 .comment img {
   border-radius: 50%;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
   margin: 2rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  .comment img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 }
 .comment label {
   color: #AFAFAF;
@@ -481,6 +511,10 @@ body {
   padding: 2rem;
   border: solid #E1E1E1;
   border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Avenir";
+  background-color: #FAFAFA;
 }
 .comment textarea {
   padding: 2rem;
@@ -488,6 +522,8 @@ body {
   margin-bottom: 2rem;
   border: solid #E1E1E1;
   border-radius: 0.5rem;
+  font-size: 1.4rem;
+  background-color: #FAFAFA;
 }
 .comment [type=submit] {
   color: white;
@@ -496,29 +532,70 @@ body {
   border-radius: 0.5rem;
   padding: 2rem;
 }
+@media (min-width: 768px) {
+  .comment [type=submit] {
+    margin-left: 34rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment [type=submit] {
+    margin-left: 40rem;
+  }
+}
 .comment-container {
   margin: 1.6rem;
   border-bottom: 0.2rem solid #E1E1E1;
   display: flex;
 }
+@media (min-width: 768px) {
+  .comment-container {
+    margin: 0 8rem;
+  }
+}
 .comment__placeholder {
   background-color: #E1E1E1;
   border-radius: 50%;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
   margin: 0 2rem;
+}
+@media (min-width: 768px) {
+  .comment__placeholder {
+    margin: 1rem 2rem;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 }
 .comment__timestamp {
   display: flex;
   justify-content: space-between;
 }
 .comment__name {
-  font-weight: 700;
-  width: 33rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  width: 56rem;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .comment__name {
+    width: 43rem;
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__name {
+    width: 52rem;
+  }
 }
 .comment__para {
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .comment__para {
+    font-size: 1.4rem;
+  }
+}
 .comment__date {
   color: #AFAFAF;
+  margin: 0;
 }/*# sourceMappingURL=bio.css.map */
