@@ -479,11 +479,15 @@ body {
 .comment [type=text] {
   margin-bottom: 2rem;
   padding: 2rem;
+  border: solid #E1E1E1;
+  border-radius: 0.5rem;
 }
 .comment textarea {
   padding: 2rem;
   font-family: "Avenir";
   margin-bottom: 2rem;
+  border: solid #E1E1E1;
+  border-radius: 0.5rem;
 }
 .comment [type=submit] {
   color: white;
@@ -495,11 +499,14 @@ body {
 .comment-container {
   margin: 1.6rem;
   border-bottom: 0.2rem solid #E1E1E1;
+  display: flex;
 }
 .comment__placeholder {
-  background-color: black;
+  background-color: #E1E1E1;
   border-radius: 50%;
-  width: 10rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: 0 2rem;
 }
 .comment__timestamp {
   display: flex;
@@ -507,6 +514,10 @@ body {
 }
 .comment__name {
   font-weight: 700;
+  width: 33rem;
+}
+.comment__para {
+  font-weight: 400;
 }
 .comment__date {
   color: #AFAFAF;

@@ -63,6 +63,8 @@ b)stick it into the existing div
 
 */
 
+
+
 const displayComment = (text) =>{
     //create div and add class to it 
     const commentContainer = document.createElement("div")
@@ -83,6 +85,9 @@ const displayComment = (text) =>{
     commentDate.classList.add("comment__date")
     commentDate.innerText = text.date
 
+    const pDiv = document.createElement("div")
+    pDiv.classList.add("comment__para")
+
     const comment = document.createElement("p")
     comment.classList.add("p")
     comment.innerText = text.comment
@@ -94,7 +99,8 @@ const displayComment = (text) =>{
     
     commentTimestamp.appendChild(commentName)
     commentTimestamp.appendChild(commentDate)
-    commentContainer.appendChild(comment)
+    commentName.appendChild(pDiv)
+    pDiv.appendChild(comment)
 }
 
 
