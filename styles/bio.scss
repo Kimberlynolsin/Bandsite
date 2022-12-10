@@ -1,21 +1,19 @@
-
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 @use "../styles/partials/global" as *;
 
 .hero {
-&::before {
+  &::before {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(../assets/Images/hero-bio.jpg);
-  
+
     @include hero-img;
     @include bg-img;
   }
   &__container {
     margin-left: 1.6rem;
   }
-
 }
 
 .article {
@@ -169,34 +167,78 @@
   }
 }
 
-.comment{
-
- &__title{
-  margin-left: 1.6rem;
- }
-  
-  &-container{
-    padding: 0 1.6rem;
+.comment {
+  &__title {
+    margin-left: 1.6rem;
+  }
+  &__form {
     border-bottom: 0.2rem solid $mercury-color;
-    // display: flex;
+    margin: 1.6rem;
+    display: flex;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+
+  }
+  img{
+  border-radius: 50%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: 2rem;
+  margin-top: 3rem;
+  }
+    
+  label{
+    color: $silver-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  [type="text"] {
+    margin-bottom: 2rem;
+    padding: 2rem;
   }
   
-  &__placeholder{
+  textarea {
+    padding: 2rem;
+    font-family: "Avenir";
+    margin-bottom: 2rem;
+  }
+
+  [type="submit"] {
+    color: white;
+    background-color: $black-color;
+    border-style: initial;
+    border-radius: 0.5rem;
+    padding: 2rem;
+  }
+
+  &-container {
+    margin:1.6rem;
+    border-bottom: 0.2rem solid $mercury-color;
+  }
+
+  &__placeholder {
     background-color: black;
-  border-radius: 50%;
-  width: 10rem;
-}
+    border-radius: 50%;
+    width: 10rem;
+  }
 
-&__timestamp{
-  display: flex;
-  justify-content: space-between;
-}
+  &__timestamp {
+    display: flex;
+    justify-content: space-between;
+  }
 
-&__name{
-  font-weight: 700;
-}
+  &__name {
+    font-weight: 700;
+  }
 
-&__date{
-  color: $silver-color;
-}
+  &__date {
+    color: $silver-color;
+  }
 }

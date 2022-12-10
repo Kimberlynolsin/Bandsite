@@ -31,7 +31,7 @@ const commentsArray = [
   },
 ];
 
-// console.log(commentsArray[0].user)
+
 
 const comments = document.querySelector(".comment");
 
@@ -39,32 +39,17 @@ const commentTitle = document.createElement("h2");
 commentTitle.classList.add("comment__title");
 commentTitle.innerText = "Join the Conversation";
 
+const inputField = document.querySelector(".comment__form")
+
 comments.appendChild(commentTitle);
+comments.appendChild(inputField)
 
-/* 
-<section>
-<div>
-    <form>
-        <input type = "text"/>
-        <textarea name= "comment"> </textarea>
-    </form>
-<div>
-
-<div>
-    comments
-</div>
-</section>
+/*
 //////////////////////////////////////
  what do we need in the function?
 1. We need to extract comment from commentsArray 
- - (commentsArray.comment)
-commentsArray.comment
- function displayComment(obj.key){
-let comment = commentArray
+ - (commentsArray[i])
 
- }
-
- displayComment(commentArray.comment)
 //////////////////////////////////////
 
 2. we need to stick it into section
@@ -118,12 +103,6 @@ for(i = 0; i < commentsArray.length; i++){
 }
 
 
-// for (i = 0; i < commentsArray.length; i++) {
-//   let comment = commentsArray[i];
 
-//   const div = document.createElement("div");
-//   div.classList.add("div__comment");
 
-//   comments.appendChild(div);
-// //   div.appendChild(comment.comment)
-// }
+

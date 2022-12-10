@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/font/otf/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/Font/ttf/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../../assets/font/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/font/AvenirNextLTPro.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/Font/otf/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/Font/ttf/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../../assets/font/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/font/AvenirNextLTProDemi.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../../assets/Font/otf/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/Font/ttf/AvenirNextLTProBold.ttf) format("truetype");
+  src: url(../../assets/font/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/font/AvenirNextLTProBold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -452,8 +452,48 @@ body {
 .comment__title {
   margin-left: 1.6rem;
 }
+.comment__form {
+  border-bottom: 0.2rem solid #E1E1E1;
+  margin: 1.6rem;
+  display: flex;
+}
+.comment__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+.comment img {
+  border-radius: 50%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: 2rem;
+  margin-top: 3rem;
+}
+.comment label {
+  color: #AFAFAF;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.comment [type=text] {
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+.comment textarea {
+  padding: 2rem;
+  font-family: "Avenir";
+  margin-bottom: 2rem;
+}
+.comment [type=submit] {
+  color: white;
+  background-color: #323232;
+  border-style: initial;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
 .comment-container {
-  padding: 0 1.6rem;
+  margin: 1.6rem;
   border-bottom: 0.2rem solid #E1E1E1;
 }
 .comment__placeholder {
