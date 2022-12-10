@@ -136,7 +136,7 @@
         </div>
       </section>
       <section class="comment">
-        <form class="comment__form">
+        <form class="comment__form" id="formId">
           <div>
             <img
             src="./assets/images/Mohan-muruge.jpg"
@@ -146,12 +146,17 @@
           </div>
           <div class="comment__input-container">
             <label for="name">Name</label>
-            <input type="text" value="Enter Your Name" id="name" />
+
+            <input type="text" name="name" placeholder="Enter Your Name" />
+            
             <label for="addComment">Comment</label>
-            <textarea text="text" id="comment">Add a New Comment</textarea>
+
+            <textarea name="comment" placeholder="Add a New Comment"></textarea>
+            
             <input type="submit" value="COMMENT" id="submit" />
           </div>
         </form>
+        <div class="commentSection"></div>
       </section>
     </main>
     <footer>
