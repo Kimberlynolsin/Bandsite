@@ -44,10 +44,7 @@ let createElementWithClass = (type, className, text, container) => {
 let ticketTitle = document.createElement("h2");
 ticketTitle.classList.add("ticket__title");
 ticketTitle.innerText = "Shows";
-ticketSection.appendChild(ticketTitle);
-
-const tablet = document.getElementsByClassName("ticket__subtitle--tablet")
-ticketSection.appendChild(tablet)
+ticketSection.prepend(ticketTitle);
 
 for (i = 0; i < showsArray.length; i++) {
   let show = showsArray[i];
@@ -58,28 +55,14 @@ for (i = 0; i < showsArray.length; i++) {
   createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
   createElementWithClass("p", "ticket__date", show.date, ticketContainer);
   createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
-  createElementWithClass(
-    "p",
-    "ticket__description",
-    show.venue,
-    ticketContainer
-  );
+  createElementWithClass("p","ticket__description",show.venue,ticketContainer);
   createElementWithClass("h3", "ticket__subtitle", "Location", ticketContainer);
-  createElementWithClass(
-    "p",
-    "ticket__description",
-    show.location,
-    ticketContainer
-  );
-  createElementWithClass(
-    "button",
-    "ticket__btn",
-    "Buy Tickets",
-    ticketContainer
-  );
+  createElementWithClass("p","ticket__description",show.location,ticketContainer);
+  createElementWithClass( "button","ticket__btn","Buy Tickets",ticketContainer);
 
   ticketSection.appendChild(ticketContainer);
 }
+
 
 // function select(x) {
 //   const ticketCon = document.querySelectorAll(".ticket-container")[0];

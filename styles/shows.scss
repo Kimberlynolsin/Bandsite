@@ -14,14 +14,12 @@
     display: flex;
     flex-direction: column;
 
-
-    @include desktop{
+    @include desktop {
       flex-direction: row;
       align-items: center;
       margin: 0 12rem;
     }
   }
-
 
   &__text {
     color: $white-color;
@@ -34,7 +32,9 @@
       font-size: 2.4rem;
     }
 
-  
+    @include desktop{
+      // margin-left: 12rem;
+    }
   }
 
   &__title {
@@ -45,30 +45,31 @@
       width: 53rem;
       padding-top: 1rem;
     }
+
+    @include desktop{
+      margin: 0;
+    }
   }
 
   &__music {
     position: relative;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     width: 96vw;
     height: 20rem;
     border-radius: 0.5rem;
-    
+
     @include tablet {
       width: 55vw;
       height: 14rem;
     }
-    
-    @include desktop{
+
+    @include desktop {
       width: 37vw;
       // justify-content: flex-end;
-      }
-
-      
     }
   }
-
+}
 
 .ticket {
   display: flex;
@@ -91,14 +92,24 @@
       background: $alabaster-color;
     }
 
-    &:active{
+    &:active {
       background: $silver-color;
+    }
+
+    @include desktop {
+      margin-left:28rem;
+      margin-right: 15rem;
     }
   }
 
   &__title {
     font-size: 2.4rem;
     margin-left: 1.6rem;
+
+
+    @include desktop {
+      margin-left: 13rem;
+    }
   }
 
   &__subtitle {
@@ -111,9 +122,45 @@
     }
   }
 
-  &__subtitle--tablet{
-display: block;
+  &__subtitle--tablet {
+    display: none;
+
+    @include tablet {
+      display: block;
+      display: flex;
+      width: 45%;
+      padding-left: 1.6rem;
+      margin-top: 0;
+    }
+    @include desktop {
+      margin-left: 21rem;
+    }
   }
+
+  &__title-date {
+    font-weight: 400;
+    @include tablet {
+      margin-right: 17rem;
+    }
+    @include desktop {
+      margin-right: 18rem;
+    }
+  }
+  &__title-venue {
+    font-weight: 400;
+    @include tablet{
+      margin-right: 9rem;
+    }
+
+    @include desktop{
+    margin-right: 12rem;
+    }
+  }
+
+  &__title-location{
+    font-weight: 400;
+  }
+
   &__date {
     font-weight: 700;
 

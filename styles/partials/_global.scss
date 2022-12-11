@@ -119,6 +119,7 @@ body {
   background-color: $black-color;
   color: $white-color;
   padding: 1.6rem;
+  margin-top: 4rem;
 
   @include desktop {
     padding: 0 9rem 2rem 9rem;

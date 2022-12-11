@@ -141,6 +141,7 @@ body {
   background-color: #323232;
   color: #FFFFFF;
   padding: 1.6rem;
+  margin-top: 4rem;
 }
 @media (min-width: 1280px) {
   .footer {
@@ -326,6 +327,11 @@ body {
     padding-top: 1rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__title {
+    margin: 0;
+  }
+}
 .hero__music {
   position: relative;
   display: flex;
@@ -373,9 +379,20 @@ body {
 .ticket-container:active {
   background: #AFAFAF;
 }
+@media (min-width: 1280px) {
+  .ticket-container {
+    margin-left: 28rem;
+    margin-right: 15rem;
+  }
+}
 .ticket__title {
   font-size: 2.4rem;
   margin-left: 1.6rem;
+}
+@media (min-width: 1280px) {
+  .ticket__title {
+    margin-left: 13rem;
+  }
 }
 .ticket__subtitle {
   color: #AFAFAF;
@@ -389,7 +406,50 @@ body {
   }
 }
 .ticket__subtitle--tablet {
-  display: block;
+  display: none;
+}
+@media (min-width: 768px) {
+  .ticket__subtitle--tablet {
+    display: block;
+    display: flex;
+    width: 45%;
+    padding-left: 1.6rem;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .ticket__subtitle--tablet {
+    margin-left: 21rem;
+  }
+}
+.ticket__title-date {
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .ticket__title-date {
+    margin-right: 17rem;
+  }
+}
+@media (min-width: 1280px) {
+  .ticket__title-date {
+    margin-right: 18rem;
+  }
+}
+.ticket__title-venue {
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .ticket__title-venue {
+    margin-right: 9rem;
+  }
+}
+@media (min-width: 1280px) {
+  .ticket__title-venue {
+    margin-right: 12rem;
+  }
+}
+.ticket__title-location {
+  font-weight: 400;
 }
 .ticket__date {
   font-weight: 700;
