@@ -31,7 +31,6 @@
     @include tablet {
       font-size: 2.4rem;
     }
-
   }
 
   &__title {
@@ -43,7 +42,7 @@
       padding-top: 1rem;
     }
 
-    @include desktop{
+    @include desktop {
       margin: 0;
     }
   }
@@ -89,9 +88,8 @@
       background: $alabaster-color;
     }
 
-
     @include desktop {
-      margin-left:28rem;
+      margin-left: 28rem;
       margin-right: 10rem;
     }
   }
@@ -100,7 +98,6 @@
     font-size: 2.4rem;
     margin-left: 1.6rem;
     font-weight: 600;
-
 
     @include desktop {
       margin-left: 13rem;
@@ -144,16 +141,16 @@
   }
   &__title-venue {
     font-weight: 400;
-    @include tablet{
+    @include tablet {
       margin-right: 9rem;
     }
 
-    @include desktop{
-    margin-right: 13rem;
+    @include desktop {
+      margin-right: 13rem;
     }
   }
 
-  &__title-location{
+  &__title-location {
     font-weight: 400;
   }
 

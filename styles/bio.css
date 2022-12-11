@@ -82,7 +82,7 @@ body {
   }
 }
 .header .nav__list .nav__link {
-  color: #E1E1E1;
+  color: #e1e1e1;
   width: 100%;
   font-size: 1.4rem;
   padding-bottom: 1rem;
@@ -120,7 +120,7 @@ body {
   min-height: 60vw;
 }
 .hero__title {
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   font-size: 2.4rem;
   font-weight: 700;
@@ -139,7 +139,7 @@ body {
 
 .footer {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 1.6rem;
   margin-top: 4rem;
 }
@@ -400,7 +400,7 @@ body {
 }
 
 .gallery {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   padding: 1.6rem;
@@ -473,7 +473,7 @@ body {
   }
 }
 .comment__form {
-  border-bottom: 0.2rem solid #E1E1E1;
+  border-bottom: 0.2rem solid #e1e1e1;
   margin: 1.6rem;
   display: flex;
 }
@@ -502,7 +502,7 @@ body {
   }
 }
 .comment label {
-  color: #AFAFAF;
+  color: #afafaf;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -510,21 +510,21 @@ body {
 .comment [type=text] {
   margin-bottom: 2rem;
   padding: 2rem;
-  border: solid #E1E1E1;
+  border: solid #e1e1e1;
   border-radius: 0.5rem;
   font-size: 1.4rem;
   font-weight: 400;
   font-family: "Avenir";
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .comment textarea {
   padding: 2rem;
   font-family: "Avenir";
   margin-bottom: 2rem;
-  border: solid #E1E1E1;
+  border: solid #e1e1e1;
   border-radius: 0.5rem;
   font-size: 1.4rem;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .comment [type=submit] {
   color: white;
@@ -545,7 +545,7 @@ body {
 }
 .comment-container {
   margin: 1.6rem;
-  border-bottom: 0.2rem solid #E1E1E1;
+  border-bottom: 0.2rem solid #e1e1e1;
   display: flex;
 }
 @media (min-width: 768px) {
@@ -554,7 +554,7 @@ body {
   }
 }
 .comment__placeholder {
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   border-radius: 50%;
   width: 3.6rem;
   height: 3.6rem;
@@ -597,6 +597,6 @@ body {
   }
 }
 .comment__date {
-  color: #AFAFAF;
+  color: #afafaf;
   margin: 0;
 }/*# sourceMappingURL=bio.css.map */

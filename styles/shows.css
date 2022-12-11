@@ -82,7 +82,7 @@ body {
   }
 }
 .header .nav__list .nav__link {
-  color: #E1E1E1;
+  color: #e1e1e1;
   width: 100%;
   font-size: 1.4rem;
   padding-bottom: 1rem;
@@ -120,7 +120,7 @@ body {
   min-height: 60vw;
 }
 .hero__title {
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   font-size: 2.4rem;
   font-weight: 700;
@@ -139,7 +139,7 @@ body {
 
 .footer {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 1.6rem;
   margin-top: 4rem;
 }
@@ -305,7 +305,7 @@ body {
   }
 }
 .hero__text {
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   font-size: 1.4rem;
   font-weight: 400;
@@ -365,7 +365,7 @@ body {
 }
 .ticket-container {
   padding: 1.6rem;
-  border-bottom: 0.2rem solid #E1E1E1;
+  border-bottom: 0.2rem solid #e1e1e1;
 }
 @media (min-width: 768px) {
   .ticket-container {
@@ -375,7 +375,7 @@ body {
   }
 }
 .ticket-container:hover {
-  background: #FAFAFA;
+  background: #fafafa;
 }
 @media (min-width: 1280px) {
   .ticket-container {
@@ -395,7 +395,7 @@ body {
   }
 }
 .ticket__subtitle {
-  color: #AFAFAF;
+  color: #afafaf;
   margin: 2rem 0;
   font-weight: 400;
 }

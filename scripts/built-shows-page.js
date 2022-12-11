@@ -84,7 +84,6 @@ console.log(changeColor);
 let previouslyClickedElement = undefined;
 
 const handler = (event) => {
-
   if ("ticket__btn" === event.target.className) return;
 
   if (previouslyClickedElement) {
@@ -95,12 +94,9 @@ const handler = (event) => {
   currentlyClickedTarget.style.backgroundColor = "rgb(225,225,225)";
 
   previouslyClickedElement = currentlyClickedTarget;
-
-
 };
 
 changeColor.forEach((element) => {
   console.log(element);
   element.addEventListener("click", handler);
 });
-

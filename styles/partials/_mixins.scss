@@ -1,38 +1,35 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin mobile {
-    @media (min-width: $xs-breakpoint) {
-        @content;
-    }
+  @media (min-width: $xs-breakpoint) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (min-width: $s-breakpoint)  {
-        @content;
-    }
+  @media (min-width: $s-breakpoint) {
+    @content;
+  }
 }
 @mixin desktop {
-    @media (min-width: $m-breakpoint) {
-        @content;
-    }
+  @media (min-width: $m-breakpoint) {
+    @content;
+  }
 }
 
-
 @mixin bg-img {
-    background-size: cover;
-    background-position: center;
-    
-    
+  background-size: cover;
+  background-position: center;
 }
 
 @mixin hero-img {
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    opacity: 0.9;
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
 
-    @include bg-img;
+  @include bg-img;
 }
