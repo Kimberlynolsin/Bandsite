@@ -89,13 +89,11 @@ formButton.addEventListener("submit", (event) => {
     comment: newUserComment,
   };
 
-
   commentsArray.push(newText);
 
-  console.table(commentsArray)
+  console.table(commentsArray);
   displayComment(newText);
 
   document.getElementById("name").value = " ";
   document.getElementById("submit").value = " ";
-
 });
