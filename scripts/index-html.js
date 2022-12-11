@@ -27,10 +27,12 @@ commentTitle.innerText = "Join the Conversation";
 
 const inputField = document.querySelector(".comment__form");
 
-comments.prepend(inputField);
-comments.prepend(commentTitle);
+const newCommentSection = document.createElement("div");
+newCommentSection.classList.add("comment__section");
 
-const commentSection = document.querySelector(".commentSection");
+comments.appendChild(commentTitle);
+comments.appendChild(inputField);
+comments.appendChild(newCommentSection);
 
 const displayComment = (text) => {
   const commentContainer = document.createElement("div");
@@ -53,18 +55,18 @@ const displayComment = (text) => {
   const pDiv = document.createElement("div");
   pDiv.classList.add("comment__para");
 
-  const comment = document.createElement("p");
-  comment.classList.add("p");
-  comment.innerText = text.comment;
+  const userComment = document.createElement("p");
+  userComment.classList.add("p");
+  userComment.innerText = text.comment;
 
-  pDiv.appendChild(comment);
+  pDiv.appendChild(userComment);
   commentName.appendChild(pDiv);
   commentTimestamp.appendChild(commentName);
   commentTimestamp.appendChild(commentDate);
   commentContainer.appendChild(commentPlaceholder);
   commentContainer.appendChild(commentTimestamp);
 
-  commentSection.prepend(commentContainer);
+  newCommentSection.prepend(commentContainer);
 };
 
 for (i = 0; i < commentsArray.length; i++) {
@@ -79,7 +81,7 @@ formButton.addEventListener("submit", (event) => {
 
   const newUserName = event.target.name.value;
   const newUserComment = event.target.comment.value;
-  const currentDate = new Date()
+  const currentDate = new Date();
 
   const newText = {
     user: newUserName,
@@ -87,5 +89,13 @@ formButton.addEventListener("submit", (event) => {
     comment: newUserComment,
   };
 
+  console.log(commentsArray);
+
+  commentsArray.push(newText);
   displayComment(newText);
+
+  document.getElementById("name").value = " ";
+  document.getElementById("submit").value = " ";
+
+  
 });

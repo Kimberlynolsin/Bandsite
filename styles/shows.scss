@@ -10,14 +10,18 @@
     @include hero-img;
   }
   &__container {
-    margin-left: 1.6rem;
+    margin: 0 1.6rem;
     display: flex;
     flex-direction: column;
 
-    @include tablet {
-      // margin: 0 3.6rem;
+
+    @include desktop{
+      flex-direction: row;
+      align-items: center;
+      margin: 0 12rem;
     }
   }
+
 
   &__text {
     color: $white-color;
@@ -29,6 +33,8 @@
     @include tablet {
       font-size: 2.4rem;
     }
+
+  
   }
 
   &__title {
@@ -44,25 +50,30 @@
   &__music {
     position: relative;
     display: flex;
-    flex-direction: column;
-    iframe {
-      width: 96vw;
-      height: 20rem;
-      border-radius: 0.5rem;
-
-      @include tablet {
-        width: 55vw;
-        height: 14rem;
+    flex-direction: column;    
+    width: 96vw;
+    height: 20rem;
+    border-radius: 0.5rem;
+    
+    @include tablet {
+      width: 55vw;
+      height: 14rem;
+    }
+    
+    @include desktop{
+      width: 37vw;
+      // justify-content: flex-end;
       }
+
+      
     }
   }
-}
+
 
 .ticket {
   display: flex;
   flex-direction: column;
   @include tablet {
-    // display: none;
     margin: 0;
     margin-bottom: 4rem;
   }
@@ -70,22 +81,19 @@
   &-container {
     padding: 1.6rem;
     border-bottom: 0.2rem solid $mercury-color;
-    
 
-    @include tablet{
+    @include tablet {
       display: flex;
       justify-content: space-between;
-    align-items: center;
-    // margin-bottom: 2rem;
+      align-items: center;
     }
     &:hover {
-      background-color: $alabaster-color;
-      &:focus {
-        background-color: $mercury-color;
-      }
+      background: $alabaster-color;
     }
 
-    
+    &:active{
+      background: $silver-color;
+    }
   }
 
   &__title {
@@ -102,16 +110,20 @@
       display: none;
     }
   }
+
+  &__subtitle--tablet{
+display: block;
+  }
   &__date {
     font-weight: 700;
 
-    @include tablet{
+    @include tablet {
       margin: 0;
     }
   }
   &__description {
     margin-top: 0.5rem;
-    @include tablet{
+    @include tablet {
       margin: 0;
     }
   }
@@ -127,8 +139,8 @@
     border-style: initial;
     font-size: 1.6rem;
 
-    @include tablet{
-      width:25%;
+    @include tablet {
+      width: 25%;
       margin-bottom: 0;
       padding: 1rem 2rem;
     }

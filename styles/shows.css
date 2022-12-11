@@ -292,9 +292,16 @@ body {
   background-position: center;
 }
 .hero__container {
-  margin-left: 1.6rem;
+  margin: 0 1.6rem;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 12rem;
+  }
 }
 .hero__text {
   color: #FFFFFF;
@@ -323,16 +330,19 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-.hero__music iframe {
   width: 96vw;
   height: 20rem;
   border-radius: 0.5rem;
 }
 @media (min-width: 768px) {
-  .hero__music iframe {
+  .hero__music {
     width: 55vw;
     height: 14rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__music {
+    width: 37vw;
   }
 }
 
@@ -358,10 +368,10 @@ body {
   }
 }
 .ticket-container:hover {
-  background-color: #FAFAFA;
+  background: #FAFAFA;
 }
-.ticket-container:hover:focus {
-  background-color: #E1E1E1;
+.ticket-container:active {
+  background: #AFAFAF;
 }
 .ticket__title {
   font-size: 2.4rem;
@@ -377,6 +387,9 @@ body {
     flex-direction: row;
     display: none;
   }
+}
+.ticket__subtitle--tablet {
+  display: block;
 }
 .ticket__date {
   font-weight: 700;
