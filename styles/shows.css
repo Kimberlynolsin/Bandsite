@@ -455,7 +455,8 @@ body {
   font-weight: 400;
 }
 .ticket__date {
-  font-weight: 700;
+  font-weight: 600;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .ticket__date {

@@ -20,7 +20,7 @@ const showsArray = [
     location: "San Francisco, CA",
   },
   {
-    date: "Fri 26 2021",
+    date: "Fri Nov 26 2021",
     venue: "Moscow Center",
     location: "San Francisco, CA",
   },

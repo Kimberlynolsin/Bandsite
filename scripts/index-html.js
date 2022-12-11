@@ -89,13 +89,27 @@ formButton.addEventListener("submit", (event) => {
     comment: newUserComment,
   };
 
-  console.log(commentsArray);
 
   commentsArray.push(newText);
+
+  console.table(commentsArray)
   displayComment(newText);
 
   document.getElementById("name").value = " ";
   document.getElementById("submit").value = " ";
 
-  
+/*
+
+1.Take input data (line 82,83,84)
+2.Store data into obj (line 86)
+3.Push input data to commentsArray (line 93)
+4.Displayed new input data to webpage (line 95)
+5.Make new input data to remain in commentsArray
+
+Problem:
+1. When webpage reloads, new comments dissapear. How to make it stay?
+
+
+*/
+
 });

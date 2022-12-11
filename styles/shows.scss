@@ -165,7 +165,8 @@
   }
 
   &__date {
-    font-weight: 700;
+    font-weight: 600;
+    color: $black-color;
 
     @include tablet {
       margin: 0;
