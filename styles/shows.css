@@ -377,9 +377,6 @@ body {
 .ticket-container:hover {
   background: #FAFAFA;
 }
-.ticket-container:active {
-  background: #AFAFAF;
-}
 @media (min-width: 1280px) {
   .ticket-container {
     margin-left: 28rem;

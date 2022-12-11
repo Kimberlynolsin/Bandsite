@@ -55,26 +55,41 @@ for (i = 0; i < showsArray.length; i++) {
   createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
   createElementWithClass("p", "ticket__date", show.date, ticketContainer);
   createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
-  createElementWithClass("p","ticket__description",show.venue,ticketContainer);
+  createElementWithClass(
+    "p",
+    "ticket__description",
+    show.venue,
+    ticketContainer
+  );
   createElementWithClass("h3", "ticket__subtitle", "Location", ticketContainer);
-  createElementWithClass("p","ticket__description",show.location,ticketContainer);
-  createElementWithClass( "button","ticket__btn","Buy Tickets",ticketContainer);
+  createElementWithClass(
+    "p",
+    "ticket__description",
+    show.location,
+    ticketContainer
+  );
+  createElementWithClass(
+    "button",
+    "ticket__btn",
+    "Buy Tickets",
+    ticketContainer
+  );
 
   ticketSection.appendChild(ticketContainer);
 }
 
 
-// function select(x) {
-//   const ticketCon = document.querySelectorAll(".ticket-container")[0];
+//query selector all returns all similar elements into an array
+const changeColor = document.querySelectorAll(".ticket-container");
+console.log(changeColor);
 
-//   if (ticketCon) {
-//     ticketCon.className = "";
-//   }
+//add bg color when element is click, bg color stays the same until other elements are selected
+const handler = (e) => {
+  e.style.setProperty('backgroundColor', 'rgb(225,225,225)')
+  console.log("You're clicking me ")
+};
 
-//   x.className = "ticket-container";
-//   console.log(ticketCon);
-
-//   ticketCon.addEventListener('click', select)
-// }
-
-
+//we need to reitirate through to addeventlistener to each of them
+changeColor.forEach((element) => {
+  element.addEventListener("click", handler);
+});

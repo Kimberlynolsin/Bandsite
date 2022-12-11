@@ -93,9 +93,9 @@
       background: $alabaster-color;
     }
 
-    &:active {
-      background: $silver-color;
-    }
+    // &:active {
+    //   background: $mercury-color;
+    // }
 
     @include desktop {
       margin-left:28rem;
