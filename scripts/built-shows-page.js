@@ -78,18 +78,55 @@ for (i = 0; i < showsArray.length; i++) {
   ticketSection.appendChild(ticketContainer);
 }
 
-
 //query selector all returns all similar elements into an array
 const changeColor = document.querySelectorAll(".ticket-container");
 console.log(changeColor);
 
+let previouslyClickedElement = undefined;
+
 //add bg color when element is click, bg color stays the same until other elements are selected
-const handler = (e) => {
-  e.style.setProperty('backgroundColor', 'rgb(225,225,225)')
-  console.log("You're clicking me ")
+const handler = (event) => {
+  //
+  if ("ticket__btn" === event.target.className) return;
+
+  if (previouslyClickedElement) {
+    previouslyClickedElement.style.backgroundColor = "white";
+  }
+
+  let currentlyClickedTarget = event.currentTarget;
+  currentlyClickedTarget.style.backgroundColor = "rgb(225,225,225)";
+
+  // selected = true
+  previouslyClickedElement = currentlyClickedTarget;
+
+  //next time taget is clicked, it runs handler again.
+
+  console.log("You're clicking me ", event);
 };
 
 //we need to reitirate through to addeventlistener to each of them
 changeColor.forEach((element) => {
+  console.log(element);
   element.addEventListener("click", handler);
 });
+
+// changeColor.forEach((element) => {
+//   console.log(element)
+//   element.addEventListener("click", (event)=>{
+//     if("ticket__btn" === event.target.className) return
+
+//     if(previouslyClickedElement) {
+//         previouslyClickedElement.style.backgroundColor = "white";
+//     }
+
+//     let currentlyClickedTarget = event.currentTarget
+//     currentlyClickedTarget.style.backgroundColor="rgb(225,225,225)"
+
+//     // selected = true
+//     previouslyClickedElement = currentlyClickedTarget;
+
+//     //next time taget is clicked, it runs handler again.
+
+//   console.log("You're clicking me ", event)
+//   });
+// });
