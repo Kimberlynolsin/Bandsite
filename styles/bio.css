@@ -123,7 +123,7 @@ body {
   color: #ffffff;
   position: relative;
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -310,6 +310,8 @@ body {
 .article__title {
   margin: 4rem 0 2rem 1.7rem;
   font-size: 2.4rem;
+  font-weight: 600;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .article__title {
@@ -412,6 +414,8 @@ body {
 }
 .gallery__title {
   margin: 0;
+  font-weight: 600;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .gallery__title {
@@ -466,6 +470,8 @@ body {
 }
 .comment__title {
   margin-left: 1.6rem;
+  font-weight: 600;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .comment__title {
