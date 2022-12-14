@@ -1,3 +1,21 @@
+const BASE_API_URL = "https://project-1-api.herokuapp.com/";
+const API_KEY = "f7dd5f87-e295-4a65-aef2-a559336e8304";
+
+const query = "comments";
+
+const url = `${BASE_API_URL}?q=${query}?api_Key=${API_KEY}`;
+
+axios
+  .get(url)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// console.log(url)
+
 const commentsArray = [
   {
     user: "Miles Acosta",
