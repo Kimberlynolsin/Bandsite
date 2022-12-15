@@ -31,11 +31,6 @@ body {
   font-size: 1.6rem;
   font-family: "Avenir";
 }
-@media (min-width: 767px) {
-  body {
-    width: 100%;
-  }
-}
 
 .header {
   background-color: #323232;
@@ -573,26 +568,13 @@ body {
     height: 4.8rem;
   }
 }
-.comment__timestamp {
-  display: flex;
-  justify-content: space-between;
+.comment__details {
+  width: 100%;
 }
 .comment__name {
   font-weight: 600;
   font-size: 1.4rem;
-  width: 56rem;
   margin: auto;
-}
-@media (min-width: 768px) {
-  .comment__name {
-    width: 43rem;
-    margin: 1rem 0;
-  }
-}
-@media (min-width: 1280px) {
-  .comment__name {
-    width: 52rem;
-  }
 }
 .comment__para {
   font-weight: 400;

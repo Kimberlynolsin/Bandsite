@@ -31,11 +31,6 @@ body {
   font-size: 1.6rem;
   font-family: "Avenir";
 }
-@media (min-width: 767px) {
-  body {
-    width: 100%;
-  }
-}
 
 .header {
   background-color: #323232;

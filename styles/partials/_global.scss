@@ -16,9 +16,7 @@ body {
   margin: 0;
   font-size: 1.6rem;
   font-family: "Avenir";
-  @include mobile {
-    width: 100%;
-  }
+ 
 }
 
 .header {
