@@ -5,95 +5,122 @@ const param = "comments";
 
 const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 
-axios
-  .get(url)
-  .then((results) => {
-    const data = results.data;
-    const dataName = data[0].name;
-    const dataDate = data[0].timestamp;
-    const dataComment = data[0].comment;
+const comments = document.querySelector(".comment");
+const kimmy = document.querySelector(".kimmy");
 
-    console.log(dataName, dataDate, dataComment);
+const displayComment = (text) => {
+  const commentContainer = document.createElement("div");
+  commentContainer.classList.add("comment-container");
 
-    const comments = document.querySelector(".comment");
+  const placeholder = document.createElement("div");
+  placeholder.classList.add("comment__placeholder");
 
-    const commentTitle = document.createElement("h2");
-    commentTitle.classList.add("comment__title");
-    commentTitle.innerText = "Join the Conversation";
+  const commentDetails = document.createElement("div");
+  commentDetails.classList.add("comment__details");
 
-    const inputField = document.querySelector(".comment__form");
+  const commentDateContainer = document.createElement("div");
+  commentDateContainer.classList.add("comment__date-container");
 
-    const newCommentSection = document.createElement("div");
-    newCommentSection.classList.add("comment__section");
+  const name = document.createElement("p");
+  name.classList.add("comment__name");
+  name.innerText = text.name;
 
-    comments.appendChild(commentTitle);
-    comments.appendChild(inputField);
-    comments.appendChild(newCommentSection);
+  const date = document.createElement("p");
+  date.classList.add("comment__date");
 
-    const displayComment = (text) => {
-      const commentContainer = document.createElement("div");
-      commentContainer.classList.add("comment-container");
+  //formate date here
+  date.innerText = text.timestamp;
 
-      const placeholder = document.createElement("div");
-      placeholder.classList.add("comment__placeholder");
+  const comment = document.createElement("p");
+  comment.classList.add("comments");
+  comment.innerText = text.comment;
 
-      const commentDetails = document.createElement("div");
-      commentDetails.classList.add("comment__details");
+  commentContainer.appendChild(placeholder);
+  commentContainer.appendChild(commentDetails);
+  commentDetails.appendChild(name);
+  commentDetails.appendChild(comment);
+  commentContainer.appendChild(commentDateContainer);
+  commentDateContainer.appendChild(date);
 
-      const commentDateContainer = document.createElement("div");
-      commentDateContainer.classList.add("comment__date-container");
+  kimmy.appendChild(commentContainer);
+};
 
-      const name = document.createElement("p");
-      name.classList.add("comment__name");
-      name.innerText = dataName;
+const commentTitle = document.createElement("h2");
+commentTitle.classList.add("comment__title");
+commentTitle.innerText = "Join the Conversation";
 
-      const date = document.createElement("p");
-      date.classList.add("comment__date");
-      date.innerText = text.date;
+const inputField = document.querySelector(".comment__form");
 
-      const comment = document.createElement("p");
-      comment.classList.add("comments");
-      comment.innerText = text.comment;
+const newCommentSection = document.createElement("div");
 
-      commentContainer.appendChild(placeholder);
-      commentContainer.appendChild(commentDetails);
-      commentDetails.appendChild(name);
-      commentDateContainer.appendChild(date);
-      commentContainer.appendChild(commentDateContainer);
-      commentDetails.appendChild(comment);
+comments.appendChild(commentTitle);
+comments.appendChild(inputField);
+comments.appendChild(newCommentSection);
 
-      newCommentSection.prepend(commentContainer);
-    };
+function getComments() {
+  axios
+    .get(url)
+    .then((results) => {
+      const dataArr = results.data;
+      const dataUser = dataArr[0];
+      const dataName = dataUser.name;
+      const dataDate = dataUser.timestamp;
 
-    for (i = 0; i < data.length; i++) {
-      displayComment(data[i]);
-    }
-    const submitBtn = document.getElementById("submit");
-    const formButton = document.getElementById("formId");
+      const dataComment = dataUser.comment;
 
-    formButton.addEventListener("submit", (event) => {
-      event.preventDefault();
+      const currentDate = new Date(dataDate).toDateString();
+      console.log(currentDate);
 
-      const newUserName = event.target.name.value;
-      const newUserComment = event.target.comment.value;
-      const currentDate = new Date();
+      console.table(dataArr);
 
-      const newText = {
-        user: newUserName,
-        date: currentDate.toLocaleDateString("en-US"),
-        comment: newUserComment,
-      };
+      //configure object timestamp to year month date
 
-      data.push(newText);
+      console.log(currentDate);
+      //connor,emily,miles
 
-      console.table(data);
-      displayComment(newText);
+      dataArr.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+      });
 
-      document.getElementById("formId").reset();
+      kimmy.innerHTML = " ";
+
+
+      //display comment function
+
+      for (i = 0; i < dataArr.length; i++) {
+        displayComment(dataArr[i]);
+        //convert timestamp
+      }
+    })
+    .catch((error) => {
+      console.log(`You have a ${error}`);
     });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+}
+getComments();
 
+const formButton = document.getElementById("formId");
 
+formButton.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const newUserName = event.target.name.value;
+  const newUserComment = event.target.comment.value;
+
+  const newText = {
+    name: newUserName,
+    comment: newUserComment,
+  };
+  console.log(newText);
+  document.getElementById("formId").reset();
+
+  axios
+    .post(url, newText)
+    .then((results) => {
+      console.log(results);
+
+      getComments();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});

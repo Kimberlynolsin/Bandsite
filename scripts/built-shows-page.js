@@ -1,102 +1,94 @@
-const showsArray = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const BASE_API_URL = "https://project-1-api.herokuapp.com/";
+const API_KEY = "ff4056ef-f943-4b2a-8042-5ac5024141c4";
 
-let ticketSection = document.querySelector(".ticket");
+const param = "showdates";
 
-let createElementWithClass = (type, className, text, container) => {
-  let element = document.createElement(type);
-  element.classList.add(className);
-  element.innerText = text;
+const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 
-  container.appendChild(element);
-};
+axios.get(url).then((results) => {
+  const showsArray = results.data;
+  const showsData = showsArray[0];
+  const showsVenue = showsData.place;
+  const showsLocation = showsData.location;
 
-let ticketTitle = document.createElement("h2");
-ticketTitle.classList.add("ticket__title");
-ticketTitle.innerText = "Shows";
-ticketSection.prepend(ticketTitle);
+  //Mon Sep 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)
 
-for (i = 0; i < showsArray.length; i++) {
-  let show = showsArray[i];
+  let objectDate = new Date(showsData.date).toDateString();
 
-  let ticketContainer = document.createElement("div");
-  ticketContainer.classList.add("ticket-container");
+  console.log(objectDate);
 
-  createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
-  createElementWithClass("p", "ticket__date", show.date, ticketContainer);
-  createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
-  createElementWithClass(
-    "p",
-    "ticket__description",
-    show.venue,
-    ticketContainer
-  );
-  createElementWithClass("h3", "ticket__subtitle", "Location", ticketContainer);
-  createElementWithClass(
-    "p",
-    "ticket__description",
-    show.location,
-    ticketContainer
-  );
-  createElementWithClass(
-    "button",
-    "ticket__btn",
-    "Buy Tickets",
-    ticketContainer
-  );
+  let ticketSection = document.querySelector(".ticket");
 
-  ticketSection.appendChild(ticketContainer);
-}
+  let createElementWithClass = (type, className, text, container) => {
+    let element = document.createElement(type);
+    element.classList.add(className);
+    element.innerText = text;
 
-const changeColor = document.querySelectorAll(".ticket-container");
-console.log(changeColor);
+    container.appendChild(element);
+  };
 
-let previouslyClickedElement = undefined;
+  let ticketTitle = document.createElement("h2");
+  ticketTitle.classList.add("ticket__title");
+  ticketTitle.innerText = "Shows";
+  ticketSection.prepend(ticketTitle);
 
-const handler = (event) => {
-  if ("ticket__btn" === event.target.className) return;
+  for (i = 0; i < showsArray.length; i++) {
+    let show = showsArray[i];
+    console.log(show);
+    let ticketContainer = document.createElement("div");
+    ticketContainer.classList.add("ticket-container");
 
-  if (previouslyClickedElement) {
-    previouslyClickedElement.style.backgroundColor = "white";
+    createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
+    createElementWithClass("p", "ticket__date", objectDate, ticketContainer);
+    createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
+    createElementWithClass(
+      "p",
+      "ticket__description",
+      show.place,
+      ticketContainer
+    );
+    createElementWithClass(
+      "h3",
+      "ticket__subtitle",
+      "Location",
+      ticketContainer
+    );
+    createElementWithClass(
+      "p",
+      "ticket__description",
+      show.location,
+      ticketContainer
+    );
+    createElementWithClass(
+      "button",
+      "ticket__btn",
+      "Buy Tickets",
+      ticketContainer
+    );
+
+    ticketSection.appendChild(ticketContainer);
   }
 
-  let currentlyClickedTarget = event.currentTarget;
-  currentlyClickedTarget.style.backgroundColor = "rgb(225,225,225)";
+  const changeColor = document.querySelectorAll(".ticket-container");
+  console.log(changeColor);
 
-  previouslyClickedElement = currentlyClickedTarget;
-};
+  let previouslyClickedElement = undefined;
 
-changeColor.forEach((element) => {
-  console.log(element);
-  element.addEventListener("click", handler);
+  const handler = (event) => {
+    if ("ticket__btn" === event.target.className) return;
+
+    if (previouslyClickedElement) {
+      previouslyClickedElement.style.backgroundColor = "white";
+    }
+
+    let currentlyClickedTarget = event.currentTarget;
+    currentlyClickedTarget.style.backgroundColor = "rgb(225,225,225)";
+
+    previouslyClickedElement = currentlyClickedTarget;
+  };
+
+  changeColor.forEach((element) => {
+    // console.log(element);
+    element.addEventListener("click", handler);
+  });
 });

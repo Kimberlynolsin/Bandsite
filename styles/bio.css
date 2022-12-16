@@ -560,6 +560,7 @@ body {
   width: 3.6rem;
   height: 3.6rem;
   margin: 0 2rem;
+  flex-shrink: 0;
 }
 @media (min-width: 768px) {
   .comment__placeholder {
