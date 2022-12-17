@@ -449,18 +449,9 @@ body {
   }
 }
 
-.comment {
-  margin-bottom: 2rem;
-}
-@media (min-width: 768px) {
-  .comment {
-    margin-bottom: 4rem;
-  }
-}
 @media (min-width: 1280px) {
   .comment {
-    margin: 0 21rem;
-    margin-bottom: 4rem;
+    margin: 0 7rem;
   }
 }
 .comment__title {
@@ -476,10 +467,16 @@ body {
 .comment__form {
   margin: 1.6rem;
   display: flex;
+  border-bottom: 0.2rem solid #e1e1e1;
 }
 @media (min-width: 768px) {
   .comment__form {
     margin: 0 8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__form {
+    margin: 0;
   }
 }
 .comment__input-container {
@@ -575,6 +572,7 @@ body {
   font-weight: 600;
   font-size: 1.4rem;
   margin: auto;
+  margin-top: 1rem;
 }
 .comment__para {
   font-weight: 400;

@@ -172,14 +172,19 @@
 }
 
 .comment {
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
+  // border-bottom: 0.2rem solid $mercury-color;
+  // margin: 1.6rem;
+
   @include tablet {
-    margin-bottom: 4rem;
+    // margin-bottom: 4rem;
   }
 
   @include desktop {
-    margin: 0 21rem;
-    margin-bottom: 4rem;
+    // margin: 0 21rem;
+    margin: 0 7rem;
+
+    // margin-bottom: 4rem;
   }
   &__title {
     margin-left: 1.6rem;
@@ -191,12 +196,16 @@
     }
   }
   &__form {
-    // border-bottom: 0.2rem solid $mercury-color;
     margin: 1.6rem;
     display: flex;
+    border-bottom: 0.2rem solid $mercury-color;
 
     @include tablet {
       margin: 0 8rem;
+    }
+
+    @include desktop{
+      margin: 0;
     }
   }
 
@@ -295,6 +304,7 @@
     font-weight: 600;
     font-size: 1.4rem;
     margin: auto;
+    margin-top: 1rem;
     
     
   }
@@ -308,7 +318,6 @@
   }
   
   &__date {
-    // float: right;
     color: $silver-color;
     margin: 0;
   }
