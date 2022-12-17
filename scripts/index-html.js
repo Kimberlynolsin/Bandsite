@@ -6,7 +6,7 @@ const param = "comments";
 const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 
 const comments = document.querySelector(".comment");
-const kimmy = document.querySelector(".kimmy");
+const userCommentSection = document.querySelector(".user-comment");
 
 const displayComment = (text) => {
   const commentContainer = document.createElement("div");
@@ -28,8 +28,7 @@ const displayComment = (text) => {
   const date = document.createElement("p");
   date.classList.add("comment__date");
 
-  //formate date here
-  date.innerText = text.timestamp;
+  date.innerText = new Date(text.timestamp).toLocaleDateString("en-US");
 
   const comment = document.createElement("p");
   comment.classList.add("comments");
@@ -42,7 +41,7 @@ const displayComment = (text) => {
   commentContainer.appendChild(commentDateContainer);
   commentDateContainer.appendChild(date);
 
-  kimmy.appendChild(commentContainer);
+  userCommentSection.appendChild(commentContainer);
 };
 
 const commentTitle = document.createElement("h2");
@@ -62,34 +61,15 @@ function getComments() {
     .get(url)
     .then((results) => {
       const dataArr = results.data;
-      const dataUser = dataArr[0];
-      const dataName = dataUser.name;
-      const dataDate = dataUser.timestamp;
-
-      const dataComment = dataUser.comment;
-
-      const currentDate = new Date(dataDate).toDateString();
-      console.log(currentDate);
-
-      console.table(dataArr);
-
-      //configure object timestamp to year month date
-
-      console.log(currentDate);
-      //connor,emily,miles
 
       dataArr.sort((a, b) => {
         return b.timestamp - a.timestamp;
       });
 
-      kimmy.innerHTML = " ";
-
-
-      //display comment function
+      userCommentSection.innerHTML = " ";
 
       for (i = 0; i < dataArr.length; i++) {
         displayComment(dataArr[i]);
-        //convert timestamp
       }
     })
     .catch((error) => {

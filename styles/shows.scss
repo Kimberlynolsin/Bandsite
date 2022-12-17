@@ -76,6 +76,11 @@
   }
 
   &-container {
+
+   > * {
+      flex: 1;
+    }
+
     padding: 1.6rem;
     border-bottom: 0.2rem solid $mercury-color;
 
@@ -121,33 +126,24 @@
     @include tablet {
       display: block;
       display: flex;
-      width: 45%;
+      width: 74%;
       padding-left: 1.6rem;
       margin-top: 0;
+      justify-content: space-between;
     }
     @include desktop {
       margin-left: 27.5rem;
+      width: 58%;
     }
   }
 
   &__title-date {
     font-weight: 400;
-    @include tablet {
-      margin-right: 17rem;
-    }
-    @include desktop {
-      margin-right: 20rem;
-    }
+
   }
   &__title-venue {
     font-weight: 400;
-    @include tablet {
-      margin-right: 9rem;
-    }
-
-    @include desktop {
-      margin-right: 13rem;
-    }
+   
   }
 
   &__title-location {

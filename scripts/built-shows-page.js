@@ -7,17 +7,14 @@ const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 
 axios.get(url).then((results) => {
   const showsArray = results.data;
-  const showsData = showsArray[0];
-  const showsVenue = showsData.place;
-  const showsLocation = showsData.location;
-
-  //Mon Sep 06 2021 00:00:00 GMT-0400 (Eastern Daylight Time)
-
-  let objectDate = new Date(showsData.date).toDateString();
-
-  console.log(objectDate);
 
   let ticketSection = document.querySelector(".ticket");
+
+  function format(timestamp) {
+    const newDate = new Date(timestamp);
+
+    return newDate.toDateString();
+  }
 
   let createElementWithClass = (type, className, text, container) => {
     let element = document.createElement(type);
@@ -34,12 +31,17 @@ axios.get(url).then((results) => {
 
   for (i = 0; i < showsArray.length; i++) {
     let show = showsArray[i];
-    console.log(show);
+
     let ticketContainer = document.createElement("div");
     ticketContainer.classList.add("ticket-container");
 
     createElementWithClass("h3", "ticket__subtitle", "Date", ticketContainer);
-    createElementWithClass("p", "ticket__date", objectDate, ticketContainer);
+    createElementWithClass(
+      "p",
+      "ticket__date",
+      format(showsArray[i].date),
+      ticketContainer
+    );
     createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
     createElementWithClass(
       "p",
@@ -68,13 +70,15 @@ axios.get(url).then((results) => {
 
     ticketSection.appendChild(ticketContainer);
   }
+});
 
+setTimeout(() => {
   const changeColor = document.querySelectorAll(".ticket-container");
-  console.log(changeColor);
 
   let previouslyClickedElement = undefined;
 
   const handler = (event) => {
+
     if ("ticket__btn" === event.target.className) return;
 
     if (previouslyClickedElement) {
@@ -88,7 +92,6 @@ axios.get(url).then((results) => {
   };
 
   changeColor.forEach((element) => {
-    // console.log(element);
     element.addEventListener("click", handler);
   });
-});
+}, "2000");
