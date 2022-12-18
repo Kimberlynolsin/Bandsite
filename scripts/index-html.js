@@ -8,7 +8,6 @@ const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 const comments = document.querySelector(".comment");
 const userCommentSection = document.querySelector(".user-comment");
 
-
 let createElementWithClass = (type, className, text, container) => {
   let element = document.createElement(type);
   element.classList.add(className);
@@ -78,7 +77,6 @@ function getComments() {
       console.log(`You have a ${error}`);
     });
 }
-
 
 getComments();
 

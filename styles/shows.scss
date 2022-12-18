@@ -44,6 +44,8 @@
 
     @include desktop {
       margin: 0;
+      width: 50rem;
+      margin-right: 3rem;
     }
   }
 
@@ -64,7 +66,7 @@
       margin-left: 4rem;
     }
 
-    iframe{
+    iframe {
       border-radius: 0.5rem;
     }
   }
@@ -79,8 +81,7 @@
   }
 
   &-container {
-
-   > * {
+    > * {
       flex: 1;
     }
 
@@ -105,11 +106,18 @@
   &__title {
     font-size: 2.4rem;
     margin-left: 1.6rem;
+    margin-bottom: 0;
     font-weight: 600;
+
+    @include tablet {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
 
     @include desktop {
       margin-left: 13rem;
       font-size: 3.6rem;
+      color: $black-color;
     }
   }
 
@@ -140,13 +148,11 @@
     }
   }
 
-  &__title-date{
+  &__title-date {
     font-weight: 400;
-
   }
   &__title-venue {
     font-weight: 400;
-   
   }
 
   &__title-location {

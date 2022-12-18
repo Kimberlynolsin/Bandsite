@@ -19,7 +19,7 @@
 .article {
   display: flex;
   flex-direction: column;
- 
+
   @include tablet {
     margin: 0;
   }
@@ -60,7 +60,7 @@
   &__quote {
     color: $black-color;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
 
     @include tablet {
       font-size: 2.4rem;
@@ -82,11 +82,16 @@
     font-weight: 600;
     margin-top: 3rem;
     color: $darkblack-color;
-    
+
     @include tablet {
       font-size: 2.4rem;
       margin-bottom: 0;
       margin-top: 4rem;
+    }
+
+    @include desktop {
+      margin-top: 6rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -139,7 +144,7 @@
     }
 
     @include desktop {
-      padding-left: 4rem;
+      padding-left: 3.5rem;
     }
   }
 
@@ -173,10 +178,8 @@
 }
 
 .comment {
-
   @include desktop {
     margin: 0 7rem;
-
   }
   &__title {
     margin-left: 1.6rem;
@@ -187,7 +190,7 @@
       font-size: 3.6rem;
     }
 
-    @include desktop{
+    @include desktop {
       margin-left: 4.6rem;
     }
   }
@@ -200,7 +203,7 @@
       margin: 0 8rem;
     }
 
-    @include desktop{
+    @include desktop {
       margin: 0 22rem;
     }
   }
@@ -292,36 +295,33 @@
     }
   }
 
- &__details{
-  width: 100%;
- }
-  
+  &__details {
+    width: 100%;
+  }
+
   &__name {
     font-weight: 600;
     font-size: 1.4rem;
     margin: auto;
     margin-top: 1rem;
-    
-    
   }
-  
+
   &__para {
     font-weight: 400;
-    
+
     @include tablet {
       font-size: 1.4rem;
     }
   }
-  
+
   &__date {
     color: $silver-color;
     margin: 0;
   }
 }
 
-.user-comment{
-
-  @include desktop{
-  margin: 0 21rem;
+.user-comment {
+  @include desktop {
+    margin: 0 21rem;
   }
 }
