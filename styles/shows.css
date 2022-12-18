@@ -331,7 +331,6 @@ body {
   flex-direction: column;
   width: 96vw;
   height: 20rem;
-  border-radius: 0.5rem;
 }
 @media (min-width: 768px) {
   .hero__music {
@@ -344,6 +343,9 @@ body {
     width: 37vw;
     margin-left: 4rem;
   }
+}
+.hero__music iframe {
+  border-radius: 0.5rem;
 }
 
 .ticket {
@@ -417,7 +419,7 @@ body {
 @media (min-width: 1280px) {
   .ticket__subtitle--tablet {
     margin-left: 27.5rem;
-    width: 58%;
+    width: 54%;
   }
 }
 .ticket__title-date {

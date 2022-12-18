@@ -29,8 +29,8 @@ axios.get(url).then((results) => {
   ticketTitle.innerText = "Shows";
   ticketSection.prepend(ticketTitle);
 
-  for (i = 0; i < showsArray.length; i++) {
-    let show = showsArray[i];
+  showsArray.forEach(element =>{
+    let show = element;
 
     let ticketContainer = document.createElement("div");
     ticketContainer.classList.add("ticket-container");
@@ -39,7 +39,7 @@ axios.get(url).then((results) => {
     createElementWithClass(
       "p",
       "ticket__date",
-      format(showsArray[i].date),
+      format(show.date),
       ticketContainer
     );
     createElementWithClass("h3", "ticket__subtitle", "Venue", ticketContainer);
@@ -69,7 +69,8 @@ axios.get(url).then((results) => {
     );
 
     ticketSection.appendChild(ticketContainer);
-  }
+  })
+
 });
 
 setTimeout(() => {

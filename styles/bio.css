@@ -364,6 +364,7 @@ body {
   .article__subtitle {
     font-size: 2.4rem;
     margin-bottom: 0;
+    margin-top: 4rem;
   }
 }
 @media (min-width: 768px) {

@@ -8,6 +8,15 @@ const url = `${BASE_API_URL}${param}?api_key=${API_KEY}`;
 const comments = document.querySelector(".comment");
 const userCommentSection = document.querySelector(".user-comment");
 
+
+let createElementWithClass = (type, className, text, container) => {
+  let element = document.createElement(type);
+  element.classList.add(className);
+  element.innerText = text;
+
+  container.appendChild(element);
+};
+
 const displayComment = (text) => {
   const commentContainer = document.createElement("div");
   commentContainer.classList.add("comment-container");
@@ -21,38 +30,31 @@ const displayComment = (text) => {
   const commentDateContainer = document.createElement("div");
   commentDateContainer.classList.add("comment__date-container");
 
-  const name = document.createElement("p");
-  name.classList.add("comment__name");
-  name.innerText = text.name;
-
   const date = document.createElement("p");
   date.classList.add("comment__date");
-
   date.innerText = new Date(text.timestamp).toLocaleDateString("en-US");
 
-  const comment = document.createElement("p");
-  comment.classList.add("comments");
-  comment.innerText = text.comment;
+  createElementWithClass("p", "comment__name", text.name, commentDetails);
+  createElementWithClass("p", "comments", text.comment, commentDetails);
 
   commentContainer.appendChild(placeholder);
   commentContainer.appendChild(commentDetails);
-  commentDetails.appendChild(name);
-  commentDetails.appendChild(comment);
   commentContainer.appendChild(commentDateContainer);
   commentDateContainer.appendChild(date);
 
   userCommentSection.appendChild(commentContainer);
 };
 
-const commentTitle = document.createElement("h2");
-commentTitle.classList.add("comment__title");
-commentTitle.innerText = "Join the Conversation";
+createElementWithClass(
+  "h2",
+  "comment__title",
+  "Join the Conversation",
+  comments
+);
 
 const inputField = document.querySelector(".comment__form");
-
 const newCommentSection = document.createElement("div");
 
-comments.appendChild(commentTitle);
 comments.appendChild(inputField);
 comments.appendChild(newCommentSection);
 
@@ -68,14 +70,16 @@ function getComments() {
 
       userCommentSection.innerHTML = " ";
 
-      for (i = 0; i < dataArr.length; i++) {
-        displayComment(dataArr[i]);
-      }
+      dataArr.forEach((element) => {
+        displayComment(element);
+      });
     })
     .catch((error) => {
       console.log(`You have a ${error}`);
     });
 }
+
+
 getComments();
 
 const formButton = document.getElementById("formId");
@@ -90,7 +94,6 @@ formButton.addEventListener("submit", (event) => {
     name: newUserName,
     comment: newUserComment,
   };
-  console.log(newText);
   document.getElementById("formId").reset();
 
   axios
