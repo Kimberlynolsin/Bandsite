@@ -46,11 +46,11 @@ body {
     }
   }
 
-  &__nav {
+  &-nav {
     width: 100%;
   }
 
-  .nav__list {
+  &-nav__list {
     display: flex;
     text-align: center;
     margin: 0;
@@ -60,7 +60,8 @@ body {
       justify-content: flex-start;
       font-size: 2rem;
     }
-    .nav__link {
+  }
+    &-nav__link {
       color: $mercury-color;
       width: 100%;
       font-size: 1.4rem;
@@ -75,8 +76,8 @@ body {
         padding-bottom: 0;
       }
     }
-    .nav__link--bio:hover,
-    .nav__link--shows:hover {
+    &-nav__link--bio:hover,
+    &-nav__link--shows:hover {
       font-weight: 600;
       border-bottom: 0.5rem solid white;
 
@@ -87,7 +88,7 @@ body {
         border-bottom: 0;
       }
     }
-  }
+  
 }
 
 .hero {

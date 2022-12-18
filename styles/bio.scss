@@ -172,19 +172,10 @@
 }
 
 .comment {
-  // margin-bottom: 2rem;
-  // border-bottom: 0.2rem solid $mercury-color;
-  // margin: 1.6rem;
-
-  @include tablet {
-    // margin-bottom: 4rem;
-  }
 
   @include desktop {
-    // margin: 0 21rem;
     margin: 0 7rem;
 
-    // margin-bottom: 4rem;
   }
   &__title {
     margin-left: 1.6rem;
@@ -193,6 +184,10 @@
 
     @include tablet {
       font-size: 3.6rem;
+    }
+
+    @include desktop{
+      margin-left: 4.6rem;
     }
   }
   &__form {
@@ -205,7 +200,7 @@
     }
 
     @include desktop{
-      margin: 0;
+      margin: 0 22rem;
     }
   }
 
@@ -320,5 +315,12 @@
   &__date {
     color: $silver-color;
     margin: 0;
+  }
+}
+
+.user-comment{
+
+  @include desktop{
+  margin: 0 21rem;
   }
 }
